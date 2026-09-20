@@ -1,336 +1,2147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>APEC VIET NAM 2027 — PHÚ QUỐC | Diễn đàn Hợp tác Kinh tế châu Á - Thái Bình Dương</title>
-  <meta name="description" content="Trang thông tin chính thức Năm APEC Việt Nam 2027 tổ chức tại Đảo Ngọc Phú Quốc. Hội tụ 21 nền kinh tế thành viên, kiến tạo tương lai phát triển bền vững, bao trùm và thịnh vượng.">
-  <meta name="keywords" content="APEC 2027, APEC Viet Nam 2027, Phu Quoc, Vietnam, Asia-Pacific Economic Cooperation, Hoi nghi thuong dinh APEC">
-  
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="APEC VIET NAM 2027 — PHÚ QUỐC">
-  <meta property="og:description" content="Hội tụ sức mạnh — Kiến tạo tương lai. 21 nền kinh tế thành viên hội tụ tại Đảo Ngọc Phú Quốc, Việt Nam.">
-  <meta property="og:image" content="assets/phuquoc-fisheye.jpg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Google Fonts: Montserrat, Inter, Poppins, Playfair Display -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>APEC VIET NAM 2027 — PHÚ QUỐC | Diễn đàn Hợp tác Kinh tế châu Á - Thái Bình Dương</title>
+    <meta
+      name="description"
+      content="Trang thông tin chính thức Năm APEC Việt Nam 2027 tổ chức tại Đảo Ngọc Phú Quốc. Hội tụ 21 nền kinh tế thành viên, kiến tạo tương lai phát triển bền vững, bao trùm và thịnh vượng."
+    />
+    <meta
+      name="keywords"
+      content="APEC 2027, APEC Viet Nam 2027, Phu Quoc, Vietnam, Asia-Pacific Economic Cooperation, Hoi nghi thuong dinh APEC"
+    />
 
-  <!-- Core Stylesheets -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/hero.css">
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="APEC VIET NAM 2027 — PHÚ QUỐC" />
+    <meta
+      property="og:description"
+      content="Hội tụ sức mạnh — Kiến tạo tương lai. 21 nền kinh tế thành viên hội tụ tại Đảo Ngọc Phú Quốc, Việt Nam."
+    />
+    <meta property="og:image" content="assets/phuquoc-fisheye.jpg" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-</head>
-<body>
+    <!-- Google Fonts: Montserrat, Inter, Poppins, Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Poppins:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Cinematic Intro Curtain (0.0s -> 1.2s) -->
-  <div id="intro-curtain">
-    <div class="intro-loader-pulse"></div>
-    <button class="skip-intro-btn" id="skip-intro-btn" data-i18n-vi="Bỏ qua mở đầu" data-i18n-en="Skip Intro">Bỏ qua mở đầu</button>
-  </div>
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/vietnam-apec.css" />
+    <link rel="stylesheet" href="css/news-events.css" />
+    <link rel="stylesheet" href="css/public-opinion.css" />
+    <link rel="stylesheet" href="css/apec-destination.css" />
+    <link rel="stylesheet" href="css/multimedia.css" />
 
-  <!-- Navigation Header (Matching Summit Reference) -->
-  <header class="main-header" role="banner">
-    <div class="header-left">
-      <a href="#" class="brand-logo-link" aria-label="APEC VIET NAM 2027 Trang chủ">
-        <img src="assets/logo.svg" alt="APEC VIET NAM 2027 Logo" class="summit-logo-img">
-      </a>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  </head>
+
+  <body>
+    <!-- Global Shared Page Background (Transitions from Hero Sky Canvas / Gradient to Next Section Background) -->
+    <div id="page-bg-container" class="page-bg-container" aria-hidden="true">
+      <div class="page-bg-hero"></div>
+      <canvas id="sky-canvas" class="page-bg-sky"></canvas>
+      <div class="page-bg-next"></div>
     </div>
 
-    <nav class="header-center" aria-label="Điều hướng chính">
-      <ul class="nav-menu">
-        <li><a href="#about" class="nav-link" data-i18n-vi="TỔNG QUAN VỀ APEC" data-i18n-en="ABOUT APEC">TỔNG QUAN VỀ APEC</a></li>
-        <li><a href="#vietnam" class="nav-link active" data-i18n-vi="VIỆT NAM VÀ APEC 2027" data-i18n-en="VIET NAM & APEC 2027">VIỆT NAM VÀ APEC 2027</a></li>
-        <li><a href="#news" class="nav-link" data-i18n-vi="TIN TỨC – SỰ KIỆN" data-i18n-en="NEWS & EVENTS">TIN TỨC – SỰ KIỆN</a></li>
-        <li><a href="#opinions" class="nav-link" data-i18n-vi="DỰ LUẬN" data-i18n-en="PUBLIC OPINION">DỰ LUẬN</a></li>
-        <li><a href="#destination" class="nav-link" data-i18n-vi="ĐIỂM ĐẾN APEC 2027" data-i18n-en="DESTINATION PHU QUOC">ĐIỂM ĐẾN APEC 2027</a></li>
-        <li><a href="#media" class="nav-link" data-i18n-vi="ĐA PHƯƠNG TIỆN" data-i18n-en="MULTIMEDIA">ĐA PHƯƠNG TIỆN</a></li>
-        <li><a href="#press" class="nav-link" data-i18n-vi="DÀNH CHO BÁO CHÍ" data-i18n-en="PRESS CENTER">DÀNH CHO BÁO CHÍ</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-actions">
-      <!-- Language Switcher -->
-      <div class="lang-selector" role="group" aria-label="Ngôn ngữ">
-        <button class="lang-btn active" data-lang="vi" aria-label="Tiếng Việt">VI</button>
-        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+    <!-- Navigation Header (Matching Summit Reference) -->
+    <header class="main-header is-transparent" role="banner">
+      <div class="header-left">
+        <a href="#" class="brand-logo-link" aria-label="APEC VIET NAM 2027 Trang chủ">
+          <img src="assets/logo.svg" alt="APEC VIET NAM 2027 Logo" class="summit-logo-img" />
+        </a>
       </div>
 
-      <!-- Mobile Hamburger -->
-      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Mở thực đơn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
+      <nav class="header-center" aria-label="Điều hướng chính">
+        <ul class="nav-menu">
+          <li>
+            <a
+              href="#about"
+              class="nav-link"
+              data-i18n-vi="TỔNG QUAN VỀ APEC"
+              data-i18n-en="ABOUT APEC"
+              >TỔNG QUAN VỀ APEC</a
+            >
+          </li>
+          <li>
+            <a
+              href="#vietnam"
+              class="nav-link"
+              data-i18n-vi="VIỆT NAM VÀ APEC 2027"
+              data-i18n-en="VIET NAM & APEC 2027"
+              >VIỆT NAM VÀ APEC 2027</a
+            >
+          </li>
+          <li>
+            <a
+              href="#news"
+              class="nav-link"
+              data-i18n-vi="TIN TỨC – SỰ KIỆN"
+              data-i18n-en="NEWS & EVENTS"
+              >TIN TỨC – SỰ KIỆN</a
+            >
+          </li>
+          <li>
+            <a
+              href="#opinions"
+              class="nav-link"
+              data-i18n-vi="DỰ LUẬN"
+              data-i18n-en="PUBLIC OPINION"
+              >DỰ LUẬN</a
+            >
+          </li>
+          <li>
+            <a
+              href="#destination"
+              class="nav-link"
+              data-i18n-vi="ĐIỂM ĐẾN APEC 2027"
+              data-i18n-en="DESTINATION PHU QUOC"
+              >ĐIỂM ĐẾN APEC 2027</a
+            >
+          </li>
+          <li>
+            <a
+              href="#media"
+              class="nav-link"
+              data-i18n-vi="ĐA PHƯƠNG TIỆN"
+              data-i18n-en="MULTIMEDIA"
+              >ĐA PHƯƠNG TIỆN</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-selector" role="group" aria-label="Ngôn ngữ">
+          <button class="lang-btn active" data-lang="vi" aria-label="Tiếng Việt">VI</button>
+          <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Mở thực đơn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <ul class="mobile-nav-list">
+        <li>
+          <a
+            href="#about"
+            class="mobile-nav-link"
+            data-i18n-vi="TỔNG QUAN VỀ APEC"
+            data-i18n-en="ABOUT APEC"
+            >TỔNG QUAN VỀ APEC</a
+          >
+        </li>
+        <li>
+          <a
+            href="#vietnam"
+            class="mobile-nav-link"
+            data-i18n-vi="VIỆT NAM VÀ APEC 2027"
+            data-i18n-en="VIET NAM & APEC 2027"
+            >VIỆT NAM VÀ APEC 2027</a
+          >
+        </li>
+        <li>
+          <a
+            href="#news"
+            class="mobile-nav-link"
+            data-i18n-vi="TIN TỨC – SỰ KIỆN"
+            data-i18n-en="NEWS & EVENTS"
+            >TIN TỨC – SỰ KIỆN</a
+          >
+        </li>
+        <li>
+          <a
+            href="#destination"
+            class="mobile-nav-link"
+            data-i18n-vi="ĐIỂM ĐẾN APEC 2027"
+            data-i18n-en="DESTINATION PHU QUOC"
+            >ĐIỂM ĐẾN APEC 2027</a
+          >
+        </li>
+        <li>
+          <a
+            href="#press"
+            class="mobile-nav-link"
+            data-i18n-vi="DÀNH CHO BÁO CHÍ"
+            data-i18n-en="PRESS CENTER"
+            >DÀNH CHO BÁO CHÍ</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <main>
+      <!-- HERO SECTION: 3D INTERACTIVE VIEWPORT -->
+      <section class="hero-viewport" id="hero-section" aria-label="Khám phá tương tác 3D APEC 2027">
+        <!-- Layer 01.5: Glowing Futuristic Podium Stage (Background Floor Layer, behind 3D Sphere) -->
+        <div class="hero-podium-wrapper" aria-hidden="true">
+          <div class="hero-podium-stage">
+            <div class="podium-arc-outer"></div>
+            <div class="podium-arc-inner"></div>
+            <div class="podium-radial-glow"></div>
+          </div>
+        </div>
+
+        <!-- Layer 02: The Carousel — A True 3D Perspective Ring (Exact Summit Spec) -->
+        <div class="showcase-wrapper" id="ring-container">
+          <div class="showcase" id="ring-showcase">
+            <div class="ring" id="perspective-ring"></div>
+          </div>
+        </div>
+
+        <!-- Layer 03: Central Phu Quoc Island World Canvas (Foreground) -->
+        <canvas id="island-canvas" class="hero-canvas"></canvas>
+
+        <!-- Typography & Branding Overlay (Aligned with Concept Reference) -->
+        <div class="hero-overlay">
+          <div class="hero-content">
+            <h1 class="hero-title-main">APEC VIETNAM 2027</h1>
+            <h2 class="hero-title-sub">PHÚ QUỐC</h2>
+
+            <p
+              class="hero-description"
+              data-i18n-vi="Diễn đàn Hợp tác Kinh tế châu Á – Thái Bình Dương hội tụ tại Đảo Ngọc Phú Quốc, cùng 21 nền kinh tế thành viên kiến tạo tương lai phát triển bền vững và thịnh vượng."
+              data-i18n-en="The Asia-Pacific Economic Cooperation summit convenes in the Pearl Island of Phu Quoc, uniting 21 member economies to foster resilient, inclusive and sustainable shared prosperity."
+            >
+              Diễn đàn Hợp tác Kinh tế châu Á – Thái Bình Dương hội tụ tại Đảo Ngọc Phú Quốc, cùng
+              21 nền kinh tế thành viên kiến tạo tương lai phát triển bền vững và thịnh vượng.
+            </p>
+
+            <a href="#summit-pillars" class="hero-cta-btn" id="explore-cta-btn">
+              <span data-i18n-vi="KHÁM PHÁ APEC 2027" data-i18n-en="EXPLORE APEC 2027"
+                >KHÁM PHÁ APEC 2027</span
+              >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Layer 04: 4 Feature Information Cards (Foreground HUD) -->
+        <div class="hero-bottom-container">
+          <!-- 4 Hero Feature Cards Grid -->
+          <div class="hero-cards-grid">
+            <!-- Card 1: 21 Member Economies -->
+            <a href="#summit-pillars" class="hero-feature-card" id="hero-card-economies">
+              <div class="card-glass-panel">
+                <div class="card-media-box">
+                  <img
+                    src="assets/hero-banner-1.png"
+                    alt="21 nền kinh tế thành viên APEC"
+                    class="card-thumb-img"
+                    loading="eager"
+                  />
+                </div>
+                <div class="card-info-row">
+                  <span
+                    class="card-title"
+                    data-i18n-vi="21 nền kinh tế<br>thành viên APEC"
+                    data-i18n-en="21 APEC Member<br>Economies"
+                    >21 nền kinh tế<br />thành viên APEC</span
+                  >
+                  <span class="card-action-btn" aria-hidden="true">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 2: APEC Summits -->
+            <a href="#summit-pillars" class="hero-feature-card" id="hero-card-summits">
+              <div class="card-glass-panel">
+                <div class="card-media-box">
+                  <img
+                    src="assets/hero-banner-2.png"
+                    alt="Các kỳ Hội Nghị Cấp Cao APEC"
+                    class="card-thumb-img"
+                    loading="eager"
+                  />
+                </div>
+                <div class="card-info-row">
+                  <span
+                    class="card-title"
+                    data-i18n-vi="Các kỳ Hội Nghị<br>Cấp Cao APEC"
+                    data-i18n-en="APEC Economic Leaders'<br>Meetings"
+                    >Các kỳ Hội Nghị<br />Cấp Cao APEC</span
+                  >
+                  <span class="card-action-btn" aria-hidden="true">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 3: APEC in Action (Featured Royal Blue Glass) -->
+            <a href="#summit-pillars" class="hero-feature-card" id="hero-card-action">
+              <div class="card-glass-panel">
+                <div class="card-media-box">
+                  <img
+                    src="assets/hero-banner-3.png"
+                    alt="APEC trong hành động"
+                    class="card-thumb-img"
+                    loading="eager"
+                  />
+                </div>
+                <div class="card-info-row">
+                  <span
+                    class="card-title"
+                    data-i18n-vi="APEC trong hành<br>động"
+                    data-i18n-en="APEC in<br>Action"
+                    >APEC trong<br />
+                    hành động</span
+                  >
+                  <span class="card-action-btn" aria-hidden="true">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 4: Viet Nam's Role in APEC -->
+            <a href="#summit-pillars" class="hero-feature-card" id="hero-card-vietnam">
+              <div class="card-glass-panel">
+                <div class="card-media-box">
+                  <img
+                    src="assets/hero-banner-4.png"
+                    alt="Vai trò của Việt Nam trong APEC"
+                    class="card-thumb-img"
+                    loading="eager"
+                  />
+                </div>
+                <div class="card-info-row">
+                  <span
+                    class="card-title"
+                    data-i18n-vi="Vai trò của Việt<br>Nam trong APEC"
+                    data-i18n-en="Viet Nam's Role<br>in APEC"
+                    >Vai trò của Việt<br />Nam trong APEC</span
+                  >
+                  <span class="card-action-btn" aria-hidden="true">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bottom Interactive HUD / Controls -->
+        <div class="hero-hud">
+          <div class="hud-center">
+            <a
+              href="#summit-pillars"
+              class="scroll-indicator"
+              aria-label="Cuộn xuống để khám phá thêm"
+            >
+              <span data-i18n-vi="CUỘN ĐỂ KHÁM PHÁ" data-i18n-en="SCROLL TO EXPLORE"
+                >CUỘN ĐỂ KHÁM PHÁ</span
+              >
+              <svg
+                class="scroll-arrow"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              >
+                <path d="M7 10l5 5 5-5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hover Tooltip for 3D Flags -->
+        <div class="flag-tooltip" id="flag-tooltip" aria-hidden="true">
+          <div class="flag-tooltip-content">
+            <img
+              src="assets/flags/vn.png"
+              alt=""
+              class="tooltip-flag-thumb"
+              id="tooltip-flag-thumb"
+            />
+            <div class="tooltip-info">
+              <span class="tooltip-name" id="tooltip-economy-name">VIỆT NAM</span>
+              <span class="tooltip-sub" id="tooltip-economy-sub"
+                >NỀN KINH TẾ CHỦ NHÀ APEC 2027</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION: VIỆT NAM VÀ APEC 2027 (VIET NAM & APEC 2027)
+           Aesthetics: Futuristic Glassmorphism, Glossy Edge & Glowing Effects
+           ===================================================================== -->
+      <section class="vietnam-apec-section" id="vietnam" aria-labelledby="vietnam-section-title">
+        <!-- Bright, High-Intensity Electric Blue & Neon Cyan Glowing Backlights -->
+
+        <div class="vn-container">
+          <!-- Section Header Block -->
+          <div class="vn-section-header">
+            <h2 class="vn-section-title" id="vietnam-section-title">
+              <span class="vn-title-red">VIỆT NAM</span>
+              <span class="vn-title-va">VÀ APEC 2027</span>
+            </h2>
+
+            <p
+              class="vn-section-desc"
+              data-i18n-vi="Trở thành nền kinh tế nước chủ nhà, Việt Nam sẽ đón nhận cả thách thức và cơ hội lớn để khẳng định bản lĩnh hội nhập, định hình tương lai số bền vững cùng châu Á – Thái Bình Dương"
+              data-i18n-en="As the host economy, Viet Nam will embrace both profound opportunities and pivotal challenges to assert its integration acumen, shaping a resilient and sustainable digital future alongside the Asia-Pacific."
+            >
+              Trở thành nền kinh tế nước chủ nhà, Việt Nam sẽ đón nhận cả thách thức và cơ hội lớn
+              để khẳng định bản lĩnh hội nhập, định hình tương lai số bền vững cùng châu Á – Thái
+              Bình Dương
+            </p>
+
+            <!-- Decorative Star Divider with Luminous Accent Lines -->
+          </div>
+
+          <!-- 2-Column Responsive Layout Grid (Figma: Frame 18, node 69:216) -->
+          <div class="vn-content-grid" data-node-id="69:216">
+            <!-- Left Column: Sidebar (Figma: sidebar, w: 300px, Node 69:227) -->
+            <aside
+              class="vn-sidebar"
+              role="tablist"
+              aria-label="Danh sách chuyên mục"
+              data-node-id="69:227"
+            >
+              <!-- Tab 1: Bối cảnh (Active State, Node 69:200) -->
+              <div
+                class="vn-tab-item active"
+                role="tab"
+                id="vn-tab-1"
+                data-tab="1"
+                aria-selected="true"
+                aria-controls="vn-pane-1"
+                tabindex="0"
+                data-node-id="69:200"
+              >
+                <div class="vn-tab-num" data-node-id="69:196">1</div>
+                <h3
+                  class="vn-tab-title"
+                  data-i18n-vi="Bối cảnh"
+                  data-i18n-en="Context"
+                  data-node-id="69:194"
+                >
+                  Bối cảnh
+                </h3>
+                <div class="vn-tab-arrow" aria-hidden="true" data-node-id="124:225">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <circle cx="11" cy="11" r="11" fill="white" />
+                    <path
+                      d="M9.5 6.5L14 11L9.5 15.5"
+                      stroke="#1565e8"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Tab 2: Dấu ấn chủ nhà Việt Nam (Node 69:220) -->
+              <div
+                class="vn-tab-item"
+                role="tab"
+                id="vn-tab-2"
+                data-tab="2"
+                aria-selected="false"
+                aria-controls="vn-pane-2"
+                tabindex="-1"
+                data-node-id="69:220"
+              >
+                <div class="vn-tab-num" data-node-id="69:222">2</div>
+                <h3
+                  class="vn-tab-title"
+                  data-i18n-vi="Dấu ấn chủ nhà Việt Nam"
+                  data-i18n-en="Host Economy Footprint"
+                  data-node-id="69:224"
+                >
+                  Dấu ấn chủ nhà Việt Nam
+                </h3>
+                <div class="vn-tab-arrow" aria-hidden="true" data-node-id="69:225">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <circle cx="11" cy="11" r="11" fill="#d9d9d9" />
+                    <path
+                      d="M9.5 6.5L14 11L9.5 15.5"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Tab 3: Ủy ban Quốc gia APEC (Node 69:229) -->
+              <div
+                class="vn-tab-item"
+                role="tab"
+                id="vn-tab-3"
+                data-tab="3"
+                aria-selected="false"
+                aria-controls="vn-pane-3"
+                tabindex="-1"
+                data-node-id="69:229"
+              >
+                <div class="vn-tab-num" data-node-id="69:231">3</div>
+                <h3
+                  class="vn-tab-title"
+                  data-i18n-vi="Ủy ban Quốc gia APEC"
+                  data-i18n-en="APEC National Committee"
+                  data-node-id="69:233"
+                >
+                  Ủy ban Quốc gia APEC
+                </h3>
+                <div class="vn-tab-arrow" aria-hidden="true" data-node-id="69:234">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <circle cx="11" cy="11" r="11" fill="#d9d9d9" />
+                    <path
+                      d="M9.5 6.5L14 11L9.5 15.5"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Tab 4: Công tác chuẩn bị (Node 69:236) -->
+              <div
+                class="vn-tab-item"
+                role="tab"
+                id="vn-tab-4"
+                data-tab="4"
+                aria-selected="false"
+                aria-controls="vn-pane-4"
+                tabindex="-1"
+                data-node-id="69:236"
+              >
+                <div class="vn-tab-num" data-node-id="69:238">4</div>
+                <h3
+                  class="vn-tab-title"
+                  data-i18n-vi="Công tác chuẩn bị"
+                  data-i18n-en="Preparation Work"
+                  data-node-id="69:240"
+                >
+                  Công tác chuẩn bị
+                </h3>
+                <div class="vn-tab-arrow" aria-hidden="true" data-node-id="69:241">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <circle cx="11" cy="11" r="11" fill="#d9d9d9" />
+                    <path
+                      d="M9.5 6.5L14 11L9.5 15.5"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Right Column: Showcase (Figma: Showcase, node 69:208) -->
+            <main class="vn-showcase" aria-live="polite" data-node-id="69:208">
+              <div class="vn-showcase-inner" data-node-id="69:209">
+                <!-- Pane 1: Bối cảnh (Figma Exact Texts) -->
+                <article
+                  class="vn-showcase-pane active"
+                  id="vn-pane-1"
+                  role="tabpanel"
+                  aria-labelledby="vn-tab-1"
+                  data-pane="1"
+                >
+                  <h3
+                    class="vn-showcase-title"
+                    data-i18n-vi="Bối cảnh chiến lược – Tâm thế mới của Việt Nam tại APEC 2027"
+                    data-i18n-en="Strategic Context – Viet Nam's New Posture at APEC 2027"
+                    data-node-id="69:213"
+                  >
+                    Bối cảnh chiến lược – Tâm thế mới của Việt Nam tại APEC 2027
+                  </h3>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Năm 2027 đánh dấu một cột mốc lịch sử khi Việt Nam tròn 29 năm gia nhập Diễn đàn. Đăng cai Năm APEC 2027 không chỉ là một trọng trách quốc tế cao cả mà còn diễn ra trong một bối cảnh địa chính trị và kinh tế toàn cầu đầy biến động. Thế giới đang chứng kiến những chuyển dịch lớn từ cục diện đa cực, sự phân mảnh chuỗi cung ứng, cho đến làn sóng chuyển đổi số và chuyển đổi xanh mạnh mẽ."
+                    data-i18n-en="The year 2027 marks a historical milestone as Viet Nam celebrates 29 years of joining the Forum. Hosting APEC 2027 is not only a noble international responsibility but also takes place amidst a volatile global geopolitical and economic backdrop. The world is witnessing major shifts from multipolar dynamics and supply chain fragmentation to a powerful wave of digital and green transitions."
+                    data-node-id="69:215"
+                  >
+                    Năm 2027 đánh dấu một cột mốc lịch sử khi Việt Nam tròn 29 năm gia nhập Diễn
+                    đàn. Đăng cai Năm APEC 2027 không chỉ là một trọng trách quốc tế cao cả mà còn
+                    diễn ra trong một bối cảnh địa chính trị và kinh tế toàn cầu đầy biến động. Thế
+                    giới đang chứng kiến những chuyển dịch lớn từ cục diện đa cực, sự phân mảnh
+                    chuỗi cung ứng, cho đến làn sóng chuyển đổi số và chuyển đổi xanh mạnh mẽ.
+                  </p>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Nếu như kỳ APEC 2006 ghi dấu bước chuyển mình khi Việt Nam chuẩn bị gia nhập WTO, và APEC 2017 khẳng định uy tín quốc tế đang lên, thì Năm APEC 2027 đòi hỏi một tâm thế hoàn toàn khác. Thứ trưởng Ngoại giao Nguyễn Minh Hằng khẳng định, Việt Nam đảm nhận vai trò chủ nhà khi đất nước bước vào một kỷ nguyên phát triển chiến lược mới. Việt Nam hiện đang hướng tới mục tiêu tăng trưởng chất lượng cao, xác lập mô hình phát triển dựa trên năng suất, đổi mới sáng tạo và nâng cao năng lực cạnh tranh."
+                    data-i18n-en="While APEC 2006 marked a transformative turning point as Viet Nam prepared to join the WTO, and APEC 2017 affirmed ascending international prestige, APEC 2027 demands an entirely refreshed posture. Vice Minister of Foreign Affairs Nguyen Minh Hang affirmed that Viet Nam assumes the host presidency as the nation enters a new strategic development era, pursuing high-quality growth based on productivity, innovation, and enhanced competitiveness."
+                    data-node-id="69:217"
+                  >
+                    Nếu như kỳ APEC 2006 ghi dấu bước chuyển mình khi Việt Nam chuẩn bị gia nhập
+                    WTO, và APEC 2017 khẳng định uy tín quốc tế đang lên, thì Năm APEC 2027 đòi hỏi
+                    một tâm thế hoàn toàn khác. Thứ trưởng Ngoại giao Nguyễn Minh Hằng khẳng định,
+                    Việt Nam đảm nhận vai trò chủ nhà khi đất nước bước vào một kỷ nguyên phát triển
+                    chiến lược mới. Việt Nam hiện đang hướng tới mục tiêu tăng trưởng chất lượng
+                    cao, xác lập mô hình phát triển dựa trên năng suất, đổi mới sáng tạo và nâng cao
+                    năng lực cạnh tranh.
+                  </p>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi='Đối mặt với những rào cản kỹ thuật quốc tế và thách thức vĩ mô, Việt Nam không còn tham gia với tâm thế "học hỏi và hòa nhập". Thay vào đó là một bản lĩnh chủ động kiến tạo, định hình các luật chơi chung và khẳng định vị thế một mắt xích không thể thay thế trong chuỗi giá trị toàn cầu.'
+                    data-i18n-en="Confronting international technical barriers and macroeconomic challenges, Viet Nam no longer participates merely to 'learn and integrate'. Instead, it brings proactive acumen to pioneer, shape common rules, and affirm its irreplaceable position in the global value chain."
+                    data-node-id="69:218"
+                  >
+                    Đối mặt với những rào cản kỹ thuật quốc tế và thách thức vĩ mô, Việt Nam không
+                    còn tham gia với tâm thế &quot;học hỏi và hòa nhập&quot;. Thay vào đó là một bản
+                    lĩnh chủ động kiến tạo, định hình các luật chơi chung và khẳng định vị thế một
+                    mắt xích không thể thay thế trong chuỗi giá trị toàn cầu.
+                  </p>
+                </article>
+
+                <!-- Pane 2: Dấu ấn chủ nhà Việt Nam -->
+                <article
+                  class="vn-showcase-pane"
+                  id="vn-pane-2"
+                  role="tabpanel"
+                  aria-labelledby="vn-tab-2"
+                  data-pane="2"
+                >
+                  <h3
+                    class="vn-showcase-title"
+                    data-i18n-vi="Hành trình ba thập kỷ và dấu ấn chủ nhà Việt Nam qua các kỳ APEC"
+                    data-i18n-en="A Three-Decade Journey and Viet Nam's Host Legacy Across APEC Summits"
+                  >
+                    Hành trình ba thập kỷ và dấu ấn chủ nhà Việt Nam qua các kỳ APEC
+                  </h3>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Kể từ khi chính thức gia nhập APEC năm 1998, Việt Nam đã không ngừng chứng minh vai trò đối tác tin cậy, trách nhiệm và năng động trong tiến trình tự do hóa thương mại và đầu tư khu vực châu Á - Thái Bình Dương."
+                    data-i18n-en="Since officially joining APEC in 1998, Viet Nam has consistently proven itself as a trusted, responsible, and proactive partner in the regional trade and investment liberalization across the Asia-Pacific."
+                  >
+                    Kể từ khi chính thức gia nhập APEC năm 1998, Việt Nam đã không ngừng chứng minh
+                    vai trò đối tác tin cậy, trách nhiệm và năng động trong tiến trình tự do hóa
+                    thương mại và đầu tư khu vực châu Á - Thái Bình Dương.
+                  </p>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Kỳ APEC 2006 tại Hà Nội đã thông qua Kế hoạch Hành động Hà Nội thực hiện Mục tiêu Bogor; APEC 2017 tại Đà Nẵng đã khởi xướng xây dựng Tầm nhìn APEC đến năm 2040. Đến năm 2027 tại Phú Quốc, Việt Nam vinh dự trở thành một trong số ít nền kinh tế thành viên ba lần được tín nhiệm trao quyền đăng cai Năm APEC."
+                    data-i18n-en="APEC 2006 in Ha Noi adopted the Ha Noi Action Plan implementing the Bogor Goals; APEC 2017 in Da Nang initiated the formulation of the APEC Vision 2040. In 2027 in Phu Quoc, Viet Nam proudly stands among the few member economies entrusted for the third time to host this preeminent forum."
+                  >
+                    Kỳ APEC 2006 tại Hà Nội đã thông qua Kế hoạch Hành động Hà Nội thực hiện Mục
+                    tiêu Bogor; APEC 2017 tại Đà Nẵng đã khởi xướng xây dựng Tầm nhìn APEC đến năm
+                    2040. Đến năm 2027 tại Phú Quốc, Việt Nam vinh dự trở thành một trong số ít nền
+                    kinh tế thành viên ba lần được tín nhiệm trao quyền đăng cai Năm APEC.
+                  </p>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Dấu ấn năm 2027 sẽ tập trung vào việc biến các cam kết chính sách thành hành động cụ thể, gắn liền với chuyển đổi xanh, kinh tế tuần hoàn và ứng dụng công nghệ số vào mọi mặt đời sống kinh tế - xã hội vì lợi ích chung của toàn khu vực."
+                    data-i18n-en="The 2027 footprint will center on converting policy declarations into tangible actions, tightly coupled with green transition, circular economy models, and digital enablement for the collective welfare of the entire region."
+                  >
+                    Dấu ấn năm 2027 sẽ tập trung vào việc biến các cam kết chính sách thành hành
+                    động cụ thể, gắn liền với chuyển đổi xanh, kinh tế tuần hoàn và ứng dụng công
+                    nghệ số vào mọi mặt đời sống kinh tế - xã hội vì lợi ích chung của toàn khu vực.
+                  </p>
+                </article>
+
+                <!-- Pane 3: Ủy ban Quốc gia APEC -->
+                <article
+                  class="vn-showcase-pane"
+                  id="vn-pane-3"
+                  role="tabpanel"
+                  aria-labelledby="vn-tab-3"
+                  data-pane="3"
+                >
+                  <h3
+                    class="vn-showcase-title"
+                    data-i18n-vi="Kiện toàn bộ máy điều hành – Sẵn sàng cho Năm APEC 2027"
+                    data-i18n-en="Streamlined Governance Structure – Primed for APEC 2027"
+                  >
+                    Kiện toàn bộ máy điều hành – Sẵn sàng cho Năm APEC 2027
+                  </h3>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Ủy ban Quốc gia APEC 2027 được thành lập với sự tham gia của các bộ, ban, ngành then chốt và lãnh đạo tỉnh Kiên Giang, đảm nhiệm trọng trách điều phối tổng thể mọi hoạt động đối ngoại, an ninh, nội dung và hậu cần."
+                    data-i18n-en="The National Committee for APEC 2027 has been established comprising key ministries, state agencies, and Kien Giang provincial leadership, orchestrating comprehensive foreign affairs, security, substantive agendas, and logistics."
+                  >
+                    Ủy ban Quốc gia APEC 2027 được thành lập với sự tham gia của các bộ, ban, ngành
+                    then chốt và lãnh đạo tỉnh Kiên Giang, đảm nhiệm trọng trách điều phối tổng thể
+                    mọi hoạt động đối ngoại, an ninh, nội dung và hậu cần.
+                  </p>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Hệ thống 5 Tiểu ban chuyên trách bao gồm: Tiểu ban Nội dung, Tiểu ban Lễ tân - Hậu cần, Tiểu ban Tuyên truyền - Văn hóa, Tiểu ban An ninh - Y tế, và Ban Thư ký Quốc gia APEC 2027 đang triển khai đồng bộ các đề án trọng điểm theo lộ trình chặt chẽ."
+                    data-i18n-en="A system of 5 specialized subcommittees—Substantive, Logistics & Protocol, Communications & Culture, Security & Healthcare, and the National Secretariat—is systematically executing master plans according to rigorous milestones."
+                  >
+                    Hệ thống 5 Tiểu ban chuyên trách bao gồm: Tiểu ban Nội dung, Tiểu ban Lễ tân -
+                    Hậu cần, Tiểu ban Tuyên truyền - Văn hóa, Tiểu ban An ninh - Y tế, và Ban Thư ký
+                    Quốc gia APEC 2027 đang triển khai đồng bộ các đề án trọng điểm theo lộ trình
+                    chặt chẽ.
+                  </p>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Sự phối hợp liên ngành nhịp nhàng cùng các sáng kiến hợp tác công - tư (PPP) sẽ tạo động lực mạnh mẽ, đảm bảo Năm APEC 2027 diễn ra an toàn, chu đáo, để lại ấn tượng sâu sắc trong lòng bạn bè quốc tế."
+                    data-i18n-en="Seamless inter-agency collaboration paired with public-private partnership (PPP) initiatives will provide decisive momentum, guaranteeing APEC 2027 is convened safely, impeccably, and memorably in the hearts of international delegates."
+                  >
+                    Sự phối hợp liên ngành nhịp nhàng cùng các sáng kiến hợp tác công - tư (PPP) sẽ
+                    tạo động lực mạnh mẽ, đảm bảo Năm APEC 2027 diễn ra an toàn, chu đáo, để lại ấn
+                    tượng sâu sắc trong lòng bạn bè quốc tế.
+                  </p>
+                </article>
+
+                <!-- Pane 4: Công tác chuẩn bị -->
+                <article
+                  class="vn-showcase-pane"
+                  id="vn-pane-4"
+                  role="tabpanel"
+                  aria-labelledby="vn-tab-4"
+                  data-pane="4"
+                >
+                  <h3
+                    class="vn-showcase-title"
+                    data-i18n-vi="Hạ tầng đẳng cấp quốc tế và tiến độ chuẩn bị tại Đảo Ngọc Phú Quốc"
+                    data-i18n-en="World-Class Infrastructure and Comprehensive Preparation in Phu Quoc"
+                  >
+                    Hạ tầng đẳng cấp quốc tế và tiến độ chuẩn bị tại Đảo Ngọc Phú Quốc
+                  </h3>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Thành phố Phú Quốc (Kiên Giang) đang khẩn trương hoàn thiện các dự án hạ tầng chiến lược: nâng cấp Cảng Hàng không Quốc tế Phú Quốc, mở rộng hệ thống giao thông đô thị, và phát triển mạng lưới trung tâm hội nghị quốc tế đạt tiêu chuẩn 5 sao."
+                    data-i18n-en="Phu Quoc City (Kien Giang) is accelerating strategic infrastructure projects: upgrading Phu Quoc International Airport, expanding smart urban transportation, and elevating 5-star international convention complexes."
+                  >
+                    Thành phố Phú Quốc (Kiên Giang) đang khẩn trương hoàn thiện các dự án hạ tầng
+                    chiến lược: nâng cấp Cảng Hàng không Quốc tế Phú Quốc, mở rộng hệ thống giao
+                    thông đô thị, và phát triển mạng lưới trung tâm hội nghị quốc tế đạt tiêu chuẩn
+                    5 sao.
+                  </p>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Hạ tầng số và chuyển đổi xanh là hai ưu tiên hàng đầu trong công tác chuẩn bị. Toàn bộ các địa điểm tổ chức hội nghị sẽ được phủ sóng mạng 5G tốc độ cao, ứng dụng giải pháp thông minh không rác thải nhựa và sử dụng 100% năng lượng tái tạo."
+                    data-i18n-en="Digital infrastructure and green transition stand as twin priorities. All summit venues will feature comprehensive ultra-fast 5G coverage, zero-single-use-plastic smart facilities, and clean renewable energy integration."
+                  >
+                    Hạ tầng số và chuyển đổi xanh là hai ưu tiên hàng đầu trong công tác chuẩn bị.
+                    Toàn bộ các địa điểm tổ chức hội nghị sẽ được phủ sóng mạng 5G tốc độ cao, ứng
+                    dụng giải pháp thông minh không rác thải nhựa và sử dụng 100% năng lượng tái
+                    tạo.
+                  </p>
+                  <p
+                    class="vn-showcase-text"
+                    data-i18n-vi="Đội ngũ tình nguyện viên, chuyên viên lễ tân và y tế đang được đào tạo bài bản với tiêu chuẩn quốc tế, sẵn sàng chào đón hàng nghìn đại biểu, lãnh đạo 21 nền kinh tế và các hãng thông tấn hàng đầu thế giới."
+                    data-i18n-en="Volunteers, liaison officers, and medical teams are undergoing world-standard training, ready to extend warmest hospitality to thousands of delegates, 21 economic leaders, and premier global press agencies."
+                  >
+                    Đội ngũ tình nguyện viên, chuyên viên lễ tân và y tế đang được đào tạo bài bản
+                    với tiêu chuẩn quốc tế, sẵn sàng chào đón hàng nghìn đại biểu, lãnh đạo 21 nền
+                    kinh tế và các hãng thông tấn hàng đầu thế giới.
+                  </p>
+                </article>
+              </div>
+            </main>
+          </div>
+        </div>
+      </section>
+      <!-- =====================================================================
+           SECTION: TIN TỨC - SỰ KIỆN (NEWS & EVENTS)
+           Figma: Frame 105:21 (News Update)
+           ===================================================================== -->
+      <section
+        class="news-events-section"
+        id="news"
+        aria-labelledby="news-section-title"
+        data-node-id="105:21"
+      >
+        <div class="news-container">
+          <!-- Section Heading Block (Node 105:24) -->
+          <div class="news-header-block" data-node-id="105:24">
+            <h2
+              class="news-section-title"
+              id="news-section-title"
+              data-i18n-vi="Tin tức - Sự kiện"
+              data-i18n-en="News & Events"
+              data-node-id="95:5"
+            >
+              Tin tức - Sự kiện
+            </h2>
+            <p
+              class="news-section-desc"
+              data-i18n-vi="Cập nhật những tin tức mới nhất về Tuần lễ Cấp cao APEC 2027, cùng các phát biểu, tuyên bố và dấu ấn nổi bật từ các nhà lãnh đạo."
+              data-i18n-en="Stay updated with the latest news on APEC Economic Leaders' Week 2027, key statements, declarations, and pivotal milestones from leaders."
+              data-node-id="105:22"
+            >
+              Cập nhật những tin tức mới nhất về Tuần lễ Cấp cao APEC 2027, cùng các phát biểu,
+              tuyên bố và dấu ấn nổi bật từ các nhà lãnh đạo.
+            </p>
+          </div>
+
+          <!-- Sub Categories List / Filter Pills (Node 105:14) -->
+          <div
+            class="news-categories-list"
+            role="tablist"
+            aria-label="Phân loại tin tức"
+            data-node-id="105:14"
+          >
+            <button
+              type="button"
+              class="news-cat-pill"
+              role="tab"
+              aria-selected="true"
+              data-i18n-vi="Các hội nghị SOM"
+              data-i18n-en="SOM Meetings"
+              data-node-id="105:8"
+            >
+              Các hội nghị SOM
+            </button>
+            <button
+              type="button"
+              class="news-cat-pill"
+              role="tab"
+              aria-selected="false"
+              data-i18n-vi="Tuần lễ cấp cao APEC"
+              data-i18n-en="APEC Economic Leaders' Week"
+              data-node-id="105:12"
+            >
+              Tuần lễ cấp cao APEC
+            </button>
+            <button
+              type="button"
+              class="news-cat-pill"
+              role="tab"
+              aria-selected="false"
+              data-i18n-vi="Phát biểu – Tuyên bố"
+              data-i18n-en="Remarks & Declarations"
+              data-node-id="105:15"
+            >
+              Phát biểu – Tuyên bố
+            </button>
+            <button
+              type="button"
+              class="news-cat-pill"
+              role="tab"
+              aria-selected="false"
+              data-i18n-vi="Tiếng nói doanh nghiệp"
+              data-i18n-en="Business Voices"
+              data-node-id="105:17"
+            >
+              Tiếng nói doanh nghiệp
+            </button>
+          </div>
+
+          <!-- News Showcase Area: Option 01 (Node 112:107) -->
+          <div class="news-showcase-wrapper" data-node-id="112:107">
+            <div class="news-content-frame" data-node-id="112:108">
+              <!-- Featured Top News Card (Node 112:109) -->
+              <article class="news-featured-card" data-node-id="112:109">
+                <a
+                  href="#news-featured"
+                  class="news-featured-thumb"
+                  data-node-id="112:110"
+                  aria-label="APEC 2027: Các nền kinh tế lớn tiếp tục đàm phán về thương mại và chuyển đổi số"
+                >
+                  <img
+                    src="assets/news/news-thumb-featured.png"
+                    alt="APEC 2027: Các nền kinh tế lớn tiếp tục đàm phán về thương mại và chuyển đổi số"
+                    loading="lazy"
+                  />
+                </a>
+                <div class="news-featured-info" data-node-id="134:382">
+                  <h3 class="news-featured-title" data-node-id="134:385">
+                    <a
+                      href="#news-featured"
+                      class="news-title-link"
+                      data-i18n-vi="APEC 2027: Các nền kinh tế lớn tiếp tục đàm phán về thương mại và chuyển đổi số"
+                      data-i18n-en="APEC 2027: Major economies advance negotiations on trade and digital transformation"
+                    >
+                      APEC 2027: Các nền kinh tế lớn tiếp tục đàm phán về thương mại và chuyển đổi
+                      số
+                    </a>
+                  </h3>
+                  <div class="news-meta" data-node-id="136:412">
+                    <span
+                      class="news-meta-category"
+                      data-i18n-vi="Các hội nghị SOM"
+                      data-i18n-en="SOM Meetings"
+                      data-node-id="134:386"
+                      >Các hội nghị SOM</span
+                    >
+                    <span class="news-meta-dot" data-node-id="136:413">•</span>
+                    <span
+                      class="news-meta-time"
+                      data-i18n-vi="4 giờ trước"
+                      data-i18n-en="4 hours ago"
+                      data-node-id="136:415"
+                      >4 giờ trước</span
+                    >
+                  </div>
+                  <p
+                    class="news-featured-desc"
+                    data-i18n-vi="Diễn biến tại APEC 2027 đang được theo dõi chặt chẽ khi các nhà lãnh đạo và doanh nghiệp tiếp tục thảo luận về các giải pháp thúc đẩy thương mại, an ninh lương thực và chuyển đổi số trong bối cảnh mới."
+                    data-i18n-en="Developments at APEC 2027 are closely followed as leaders and enterprises continue deliberating solutions to promote trade, food security, and digital economy in the new context."
+                    data-node-id="136:411"
+                  >
+                    Diễn biến tại APEC 2027 đang được theo dõi chặt chẽ khi các nhà lãnh đạo và
+                    doanh nghiệp tiếp tục thảo luận về các giải pháp thúc đẩy thương mại, an ninh
+                    lương thực và chuyển đổi số trong bối cảnh mới.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Secondary 3-Column News Grid (Node 112:119) -->
+              <div class="news-secondary-grid" data-node-id="112:119">
+                <!-- Sub News 1 (Node 112:120) -->
+                <article class="news-secondary-card" data-node-id="112:120">
+                  <a
+                    href="#news-1"
+                    class="news-secondary-thumb"
+                    data-node-id="112:121"
+                    aria-label="Đàm phán thương mại: Các bên tiếp tục tìm kiếm đồng thuận"
+                  >
+                    <img
+                      src="assets/news/news-thumb-1.png"
+                      alt="Đàm phán thương mại: Các bên tiếp tục tìm kiếm đồng thuận"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="news-secondary-content" data-node-id="112:122">
+                    <h4 class="news-card-title" data-node-id="112:123">
+                      <a
+                        href="#news-1"
+                        class="news-title-link"
+                        data-i18n-vi="Đàm phán thương mại: Các bên tiếp tục tìm kiếm đồng thuận"
+                        data-i18n-en="Trade Negotiations: Parties Continue Seeking Consensus"
+                      >
+                        Đàm phán thương mại: Các bên tiếp tục tìm kiếm đồng thuận
+                      </a>
+                    </h4>
+                    <div class="news-meta">
+                      <span
+                        class="news-meta-category"
+                        data-i18n-vi="Tuần lễ cấp cao APEC"
+                        data-i18n-en="Leaders' Week"
+                        >Tuần lễ cấp cao APEC</span
+                      >
+                      <span class="news-meta-dot">•</span>
+                      <span
+                        class="news-meta-time"
+                        data-i18n-vi="5 giờ trước"
+                        data-i18n-en="5 hours ago"
+                        >5 giờ trước</span
+                      >
+                    </div>
+                    <p
+                      class="news-card-desc"
+                      data-i18n-vi="Các cuộc thảo luận về khuôn khổ thương mại mới đang được đẩy mạnh."
+                      data-i18n-en="Discussions on modern trade frameworks are being accelerated."
+                      data-node-id="112:124"
+                    >
+                      Các cuộc thảo luận về khuôn khổ thương mại mới đang được đẩy mạnh.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Sub News 2 (Node 112:125) -->
+                <article class="news-secondary-card" data-node-id="112:125">
+                  <a
+                    href="#news-2"
+                    class="news-secondary-thumb"
+                    data-node-id="112:126"
+                    aria-label="CEO Summit 2027: Kinh tế số và chuyển đổi năng lượng"
+                  >
+                    <img
+                      src="assets/news/news-thumb-2.png"
+                      alt="CEO Summit 2027: Kinh tế số và chuyển đổi năng lượng"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="news-secondary-content" data-node-id="112:127">
+                    <h4 class="news-card-title" data-node-id="112:128">
+                      <a
+                        href="#news-2"
+                        class="news-title-link"
+                        data-i18n-vi="CEO Summit 2027: Kinh tế số và chuyển đổi năng lượng"
+                        data-i18n-en="CEO Summit 2027: Digital Economy and Energy Transition"
+                      >
+                        CEO Summit 2027: Kinh tế số và chuyển đổi năng lượng
+                      </a>
+                    </h4>
+                    <div class="news-meta">
+                      <span
+                        class="news-meta-category"
+                        data-i18n-vi="Tiếng nói doanh nghiệp"
+                        data-i18n-en="Business Voices"
+                        >Tiếng nói doanh nghiệp</span
+                      >
+                      <span class="news-meta-dot">•</span>
+                      <span
+                        class="news-meta-time"
+                        data-i18n-vi="8 giờ trước"
+                        data-i18n-en="8 hours ago"
+                        >8 giờ trước</span
+                      >
+                    </div>
+                    <p
+                      class="news-card-desc"
+                      data-i18n-vi="Các lãnh đạo doanh nghiệp hàng đầu chia sẻ quan điểm về cách tận dụng công nghệ và chuyển đổi năng lượng."
+                      data-i18n-en="Leading business executives share perspectives on harnessing technology and clean energy transformation."
+                      data-node-id="112:129"
+                    >
+                      Các lãnh đạo doanh nghiệp hàng đầu chia sẻ quan điểm về cách tận dụng công
+                      nghệ và chuyển đổi năng lượng.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Sub News 3 (Node 112:130) -->
+                <article class="news-secondary-card" data-node-id="112:130">
+                  <a
+                    href="#news-3"
+                    class="news-secondary-thumb"
+                    data-node-id="112:131"
+                    aria-label="Lễ khai mạc APEC 2027: Không khí trang trọng và đoàn kết"
+                  >
+                    <img
+                      src="assets/news/news-thumb-3.png"
+                      alt="Lễ khai mạc APEC 2027: Không khí trang trọng và đoàn kết"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="news-secondary-content" data-node-id="112:132">
+                    <h4 class="news-card-title" data-node-id="112:133">
+                      <a
+                        href="#news-3"
+                        class="news-title-link"
+                        data-i18n-vi="Lễ khai mạc APEC 2027: Không khí trang trọng và đoàn kết"
+                        data-i18n-en="APEC 2027 Opening Ceremony: Solemn and United Atmosphere"
+                      >
+                        Lễ khai mạc APEC 2027: Không khí trang trọng và đoàn kết
+                      </a>
+                    </h4>
+                    <div class="news-meta">
+                      <span
+                        class="news-meta-category"
+                        data-i18n-vi="Phát biểu – Tuyên bố"
+                        data-i18n-en="Remarks & Declarations"
+                        >Phát biểu – Tuyên bố</span
+                      >
+                      <span class="news-meta-dot">•</span>
+                      <span
+                        class="news-meta-time"
+                        data-i18n-vi="1 ngày trước"
+                        data-i18n-en="1 day ago"
+                        >1 ngày trước</span
+                      >
+                    </div>
+                    <p
+                      class="news-card-desc"
+                      data-i18n-vi="Hội nghị khai mạc đã diễn ra trong không khí trang trọng với sự tham gia của nhiều lãnh đạo cấp cao"
+                      data-i18n-en="The opening session convened in a solemn ambiance with participation from distinguished senior dignitaries."
+                      data-node-id="112:134"
+                    >
+                      Hội nghị khai mạc đã diễn ra trong không khí trang trọng với sự tham gia của
+                      nhiều lãnh đạo cấp cao
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- View All Button (Node 112:170) -->
+            <button
+              type="button"
+              class="news-view-all-btn"
+              data-i18n-vi="Xem tất cả"
+              data-i18n-en="View All"
+              data-node-id="112:170"
+            >
+              Xem tất cả
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION: DƯ LUẬN (PUBLIC OPINION)
+           Figma: Frame 139:430 (public-opinion)
+           ===================================================================== -->
+      <section
+        class="public-opinion-section"
+        id="opinions"
+        aria-label="Dư luận"
+        data-node-id="139:430"
+      >
+        <div class="opinion-container" data-node-id="139:431">
+          <!-- Column 1: Dư luận báo chí (Node 139:472) -->
+          <div class="opinion-col" data-node-id="139:472">
+            <div class="opinion-col-header" data-node-id="139:454">
+              <h3
+                class="opinion-col-title"
+                data-i18n-vi="Dư luận báo chí"
+                data-i18n-en="Press Opinions"
+                data-node-id="139:427"
+              >
+                Dư luận báo chí
+              </h3>
+              <a
+                href="#opinion-press"
+                class="opinion-col-arrow"
+                aria-label="Xem thêm Dư luận báo chí"
+                data-node-id="139:455"
+              >
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <circle cx="11" cy="11" r="11" fill="#1565e8" />
+                  <path
+                    d="M9.5 6.5L14 11L9.5 15.5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Featured Article with Thumb (Node 139:449) -->
+            <article class="opinion-featured-news" data-node-id="139:449">
+              <a
+                href="#opinion-press-1"
+                class="opinion-thumb"
+                data-node-id="139:450"
+                aria-label="Các nền kinh tế tăng cường hợp tác toàn diện"
+              >
+                <img
+                  src="assets/opinion/opinion-1.png"
+                  alt="Các nền kinh tế tăng cường hợp tác toàn diện"
+                  loading="lazy"
+                />
+              </a>
+              <h4>
+                <a
+                  href="#opinion-press-1"
+                  class="opinion-featured-title"
+                  data-i18n-vi="Các nền kinh tế tăng cường hợp tác toàn diện"
+                  data-i18n-en="Member economies bolster comprehensive cooperation"
+                  data-node-id="139:452"
+                >
+                  Các nền kinh tế tăng cường hợp tác toàn diện
+                </a>
+              </h4>
+            </article>
+
+            <!-- Divider (Node 139:466) -->
+            <div class="opinion-divider" data-node-id="139:466"></div>
+
+            <!-- Article 2 (Node 139:468) -->
+            <article class="opinion-text-item">
+              <h4>
+                <a
+                  href="#opinion-press-2"
+                  class="opinion-text-title"
+                  data-i18n-vi="Lãnh đạo các nền kinh tế bàn giải pháp củng cố phục hồi và ổn định"
+                  data-i18n-en="Economic leaders discuss solutions to fortify recovery and stability"
+                  data-node-id="139:468"
+                >
+                  Lãnh đạo các nền kinh tế bàn giải pháp củng cố phục hồi và ổn định
+                </a>
+              </h4>
+            </article>
+
+            <!-- Divider (Node 139:470) -->
+            <div class="opinion-divider" data-node-id="139:470"></div>
+
+            <!-- Article 3 (Node 139:471) -->
+            <article class="opinion-text-item">
+              <h4>
+                <a
+                  href="#opinion-press-3"
+                  class="opinion-text-title"
+                  data-i18n-vi="Tầm nhìn mới cho hợp tác kinh tế và phát triển bền vững"
+                  data-i18n-en="A refreshed vision for economic cooperation and sustainable growth"
+                  data-node-id="139:471"
+                >
+                  Tầm nhìn mới cho hợp tác kinh tế và phát triển bền vững
+                </a>
+              </h4>
+            </article>
+          </div>
+
+          <!-- Column 2: Góc nhìn chuyên gia (Node 139:473) -->
+          <div class="opinion-col" data-node-id="139:473">
+            <div class="opinion-col-header" data-node-id="I139:473;139:454">
+              <h3
+                class="opinion-col-title"
+                data-i18n-vi="Góc nhìn chuyên gia"
+                data-i18n-en="Expert Perspectives"
+                data-node-id="I139:473;139:427"
+              >
+                Góc nhìn chuyên gia
+              </h3>
+              <a
+                href="#opinion-experts"
+                class="opinion-col-arrow"
+                aria-label="Xem thêm Góc nhìn chuyên gia"
+                data-node-id="I139:473;139:455"
+              >
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <circle cx="11" cy="11" r="11" fill="#1565e8" />
+                  <path
+                    d="M9.5 6.5L14 11L9.5 15.5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Featured Article with Thumb (Node I139:473;139:449) -->
+            <article class="opinion-featured-news" data-node-id="I139:473;139:449">
+              <a
+                href="#opinion-experts-1"
+                class="opinion-thumb"
+                data-node-id="I139:473;139:450"
+                aria-label="Cơ hội mới cho hợp tác kinh tế và phục hồi toàn cầu"
+              >
+                <img
+                  src="assets/opinion/opinion-2.png"
+                  alt="Cơ hội mới cho hợp tác kinh tế và phục hồi toàn cầu"
+                  loading="lazy"
+                />
+              </a>
+              <h4>
+                <a
+                  href="#opinion-experts-1"
+                  class="opinion-featured-title"
+                  data-i18n-vi="Cơ hội mới cho hợp tác kinh tế và phục hồi toàn cầu"
+                  data-i18n-en="Emerging opportunities for economic partnerships and global recovery"
+                  data-node-id="I139:473;139:452"
+                >
+                  Cơ hội mới cho hợp tác kinh tế và phục hồi toàn cầu
+                </a>
+              </h4>
+            </article>
+
+            <!-- Divider (Node I139:473;139:466) -->
+            <div class="opinion-divider" data-node-id="I139:473;139:466"></div>
+
+            <!-- Article 2 (Node I139:473;139:468) -->
+            <article class="opinion-text-item">
+              <h4>
+                <a
+                  href="#opinion-experts-2"
+                  class="opinion-text-title"
+                  data-i18n-vi="Doanh nghiệp Việt Nam trước những chuyển động hợp tác mới"
+                  data-i18n-en="Vietnamese enterprises amidst new regional cooperation dynamics"
+                  data-node-id="I139:473;139:468"
+                >
+                  Doanh nghiệp Việt Nam trước những chuyển động hợp tác mới
+                </a>
+              </h4>
+            </article>
+
+            <!-- Divider (Node I139:473;139:470) -->
+            <div class="opinion-divider" data-node-id="I139:473;139:470"></div>
+
+            <!-- Article 3 (Node I139:473;139:471) -->
+            <article class="opinion-text-item">
+              <h4>
+                <a
+                  href="#opinion-experts-3"
+                  class="opinion-text-title"
+                  data-i18n-vi="Phát triển bền vững và an ninh lương thực từ góc nhìn khu vực"
+                  data-i18n-en="Sustainable development and food security from regional vantage"
+                  data-node-id="I139:473;139:471"
+                >
+                  Phát triển bền vững và an ninh lương thực từ góc nhìn khu vực
+                </a>
+              </h4>
+            </article>
+          </div>
+
+          <!-- Column 3: Phân tích - Bình luận (Node 139:484) -->
+          <div class="opinion-col" data-node-id="139:484">
+            <div class="opinion-col-header" data-node-id="I139:484;139:454">
+              <h3
+                class="opinion-col-title"
+                data-i18n-vi="Phân tích - Bình luận"
+                data-i18n-en="Analysis & Commentary"
+                data-node-id="I139:484;139:427"
+              >
+                Phân tích - Bình luận
+              </h3>
+              <a
+                href="#opinion-analysis"
+                class="opinion-col-arrow"
+                aria-label="Xem thêm Phân tích - Bình luận"
+                data-node-id="I139:484;139:455"
+              >
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <circle cx="11" cy="11" r="11" fill="#1565e8" />
+                  <path
+                    d="M9.5 6.5L14 11L9.5 15.5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Featured Article with Thumb (Node I139:484;139:449) -->
+            <article class="opinion-featured-news" data-node-id="I139:484;139:449">
+              <a
+                href="#opinion-analysis-1"
+                class="opinion-thumb"
+                data-node-id="I139:484;139:450"
+                aria-label="Hợp tác kinh tế và phát triển bền vững trong bối cảnh toàn cầu hóa"
+              >
+                <img
+                  src="assets/opinion/opinion-3.png"
+                  alt="Hợp tác kinh tế và phát triển bền vững trong bối cảnh toàn cầu hóa"
+                  loading="lazy"
+                />
+              </a>
+              <h4>
+                <a
+                  href="#opinion-analysis-1"
+                  class="opinion-featured-title"
+                  data-i18n-vi="Hợp tác kinh tế và phát triển bền vững trong bối cảnh toàn cầu hóa"
+                  data-i18n-en="Economic cooperation and sustainable development amidst globalization"
+                  data-node-id="I139:484;139:452"
+                >
+                  Hợp tác kinh tế và phát triển bền vững trong bối cảnh toàn cầu hóa
+                </a>
+              </h4>
+            </article>
+
+            <!-- Divider (Node I139:484;139:466) -->
+            <div class="opinion-divider" data-node-id="I139:484;139:466"></div>
+
+            <!-- Article 2 (Node I139:484;139:468) -->
+            <article class="opinion-text-item">
+              <h4>
+                <a
+                  href="#opinion-analysis-2"
+                  class="opinion-text-title"
+                  data-i18n-vi="Các nền kinh tế tìm lời giải cho phục hồi và ổn định khu vực"
+                  data-i18n-en="Economies seek answers for regional recovery and stability"
+                  data-node-id="I139:484;139:468"
+                >
+                  Các nền kinh tế tìm lời giải cho phục hồi và ổn định khu vực
+                </a>
+              </h4>
+            </article>
+
+            <!-- Divider (Node I139:484;139:470) -->
+            <div class="opinion-divider" data-node-id="I139:484;139:470"></div>
+
+            <!-- Article 3 (Node I139:484;139:471) -->
+            <article class="opinion-text-item">
+              <h4>
+                <a
+                  href="#opinion-analysis-3"
+                  class="opinion-text-title"
+                  data-i18n-vi="Liên kết chuỗi cung ứng trở thành trọng tâm hợp tác khu vực"
+                  data-i18n-en="Supply chain integration emerges as the cornerstone of regional synergy"
+                  data-node-id="I139:484;139:471"
+                >
+                  Liên kết chuỗi cung ứng trở thành trọng tâm hợp tác khu vực
+                </a>
+              </h4>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- =====================================================================
+           APEC 2027 — DESTINATION SECTION (ĐIỂM ĐẾN APEC 2027)
+           Figma Node: 150:521
+           ===================================================================== -->
+      <section
+        class="apec2027-destination-section"
+        id="destination"
+        data-node-id="150:521"
+        aria-labelledby="destination-title"
+      >
+        <div class="destination-container">
+          <!-- Section Heading (Node 150:566) -->
+          <div class="destination-header-block" data-node-id="150:566">
+            <div class="destination-title-wrap" data-node-id="150:523">
+              <span class="destination-label" data-i18n-vi="Điểm đến" data-i18n-en="Destination"
+                >Điểm đến</span
+              >
+              <h2
+                id="destination-title"
+                class="destination-main-title"
+                data-i18n-vi="APEC 2027"
+                data-i18n-en="APEC 2027"
+              >
+                APEC 2027
+              </h2>
+            </div>
+            <p
+              class="destination-desc"
+              data-i18n-vi="Phú Quốc - Thiên đường biển đảo, nơi hội tụ những giá trị văn hóa đặc sắc, công trình hiện đại và cơ hội hợp tác bền vững"
+              data-i18n-en="Phu Quoc - Island paradise, converging unique cultural values, modern infrastructure and sustainable cooperation opportunities"
+              data-node-id="150:524"
+            >
+              Phú Quốc - Thiên đường biển đảo, nơi hội tụ những giá trị văn hóa đặc sắc, công trình
+              hiện đại và cơ hội hợp tác bền vững
+            </p>
+          </div>
+
+          <!-- Category Pills (Node 150:525) -->
+          <nav class="destination-categories" data-node-id="150:525" aria-label="Danh mục điểm đến">
+            <a
+              href="#dest-impressive"
+              class="destination-pill"
+              data-i18n-vi="Những công trình ấn tượng"
+              data-i18n-en="Impressive architectural works"
+              data-node-id="150:526"
+            >
+              Những công trình ấn tượng
+            </a>
+            <a
+              href="#dest-culture"
+              class="destination-pill"
+              data-i18n-vi="Đặc trưng văn hóa"
+              data-i18n-en="Cultural characteristics"
+              data-node-id="150:528"
+            >
+              Đặc trưng văn hóa
+            </a>
+            <a
+              href="#dest-tourism"
+              class="destination-pill"
+              data-i18n-vi="Các điểm đến du lịch"
+              data-i18n-en="Tourist destinations"
+              data-node-id="150:530"
+            >
+              Các điểm đến du lịch
+            </a>
+            <a
+              href="#dest-cooperation"
+              class="destination-pill"
+              data-i18n-vi="Tiềm năng hợp tác"
+              data-i18n-en="Cooperation potential"
+              data-node-id="150:532"
+            >
+              Tiềm năng hợp tác
+            </a>
+          </nav>
+
+          <!-- Featured Card (Node 150:609) -->
+          <article class="destination-featured-card" data-node-id="150:609">
+            <a
+              href="#destination-featured"
+              class="destination-featured-thumb"
+              data-node-id="150:622"
+              aria-label="Trung tâm Hội nghị Quốc tế Phú Quốc"
+            >
+              <img
+                src="assets/destination/destination-featured.png"
+                alt="Trung tâm Hội nghị Quốc tế Phú Quốc"
+                loading="lazy"
+              />
+            </a>
+            <div class="destination-featured-content" data-node-id="150:601">
+              <div class="destination-featured-body">
+                <h3 class="destination-card-title">
+                  <a
+                    href="#destination-featured"
+                    data-i18n-vi="Trung tâm Hội nghị Quốc tế Phú Quốc"
+                    data-i18n-en="Phu Quoc International Convention Center"
+                    data-node-id="150:602"
+                  >
+                    Trung tâm Hội nghị Quốc tế Phú Quốc
+                  </a>
+                </h3>
+                <p
+                  class="destination-card-desc"
+                  data-i18n-vi="Nơi diễn ra các phiên họp cấp cao của APEC 2027 với kiến trúc hiện đại hòa quyện cùng thiên nhiên đảo ngọc."
+                  data-i18n-en="The venue for APEC 2027 high-level meetings featuring modern architecture harmonized with island nature."
+                  data-node-id="150:603"
+                >
+                  Nơi diễn ra các phiên họp cấp cao của APEC 2027 với kiến trúc hiện đại hòa quyện
+                  cùng thiên nhiên đảo ngọc.
+                </p>
+              </div>
+
+              <a href="#destination-featured" class="destination-cta-btn" data-node-id="150:610">
+                <span data-i18n-vi="Khám phá ngay" data-i18n-en="Explore now">Khám phá ngay</span>
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11 0C4.925 0 0 4.925 0 11C0 17.075 4.925 22 11 22C17.075 22 22 17.075 22 11C22 4.925 17.075 0 11 0ZM8.793 7.707C8.61084 7.5184 8.51005 7.2658 8.51233 7.0036C8.5146 6.7414 8.61977 6.49059 8.80518 6.30518C8.99059 6.11977 9.2414 6.0146 9.5036 6.01233C9.7658 6.01005 10.0184 6.11084 10.207 6.293L14.207 10.293C14.3945 10.4805 14.4998 10.7348 14.4998 11C14.4998 11.2652 14.3945 11.5195 14.207 11.707L10.207 15.707C10.0184 15.8892 9.7658 15.99 9.5036 15.9877C9.2414 15.9854 8.99059 15.8802 8.80518 15.6948C8.61977 15.5094 8.5146 15.2586 8.51233 14.9964C8.51005 14.7342 8.61084 14.4816 8.793 14.293L12.086 11L8.793 7.707Z"
+                    fill="white"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Secondary Grid (Node 150:645) -->
+          <div class="destination-grid" data-node-id="150:645">
+            <!-- Grid Card 1: Cầu Hôn (Node 150:608) -->
+            <article class="destination-grid-card" data-node-id="150:608">
+              <a
+                href="#destination-cau-hon"
+                class="destination-grid-thumb"
+                data-node-id="150:606"
+                aria-label="Cầu Hôn - Biểu tượng mới của Phú Quốc"
+              >
+                <img
+                  src="assets/destination/destination-cauhon.png"
+                  alt="Cầu Hôn - Biểu tượng mới của Phú Quốc"
+                  loading="lazy"
+                />
+              </a>
+              <div class="destination-grid-info" data-node-id="150:607">
+                <h3 class="destination-card-title">
+                  <a
+                    href="#destination-cau-hon"
+                    data-i18n-vi="Cầu Hôn - Biểu tượng mới của Phú Quốc"
+                    data-i18n-en="Kiss Bridge - The new icon of Phu Quoc"
+                    data-node-id="150:604"
+                  >
+                    Cầu Hôn - Biểu tượng mới của Phú Quốc
+                  </a>
+                </h3>
+                <p
+                  class="destination-card-desc"
+                  data-i18n-vi="Kiệt tác kiến trúc độc đáo, điểm check-in không thể bỏ qua tại Nam đảo"
+                  data-i18n-en="A unique architectural masterpiece and must-visit landmark in the Southern Island"
+                  data-node-id="150:605"
+                >
+                  Kiệt tác kiến trúc độc đáo, điểm check-in không thể bỏ qua tại Nam đảo
+                </p>
+              </div>
+            </article>
+
+            <!-- Grid Card 2: Tinh hoa văn hóa Phú Quốc (Node 150:644) -->
+            <article class="destination-grid-card" data-node-id="150:644">
+              <a
+                href="#destination-culture"
+                class="destination-grid-thumb"
+                data-node-id="150:642"
+                aria-label="Tinh hoa văn hóa Phú Quốc"
+              >
+                <img
+                  src="assets/destination/destination-culture.png"
+                  alt="Tinh hoa văn hóa Phú Quốc"
+                  loading="lazy"
+                />
+              </a>
+              <div class="destination-grid-info" data-node-id="150:643">
+                <h3 class="destination-card-title">
+                  <a
+                    href="#destination-culture"
+                    data-i18n-vi="Tinh hoa văn hóa Phú Quốc"
+                    data-i18n-en="Essence of Phu Quoc Culture"
+                    data-node-id="150:640"
+                  >
+                    Tinh hoa văn hóa Phú Quốc
+                  </a>
+                </h3>
+                <p
+                  class="destination-card-desc"
+                  data-i18n-vi="Khám phá di sản văn hóa, ẩm thực đặc sắc và con người đảo ngọc"
+                  data-i18n-en="Discover cultural heritage, unique gastronomy, and welcoming islanders"
+                  data-node-id="150:641"
+                >
+                  Khám phá di sản văn hóa, ẩm thực đặc sắc và con người đảo ngọc
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- =====================================================================
+           APEC 2027 — MULTIMEDIA SECTION (ĐA PHƯƠNG TIỆN)
+           Dark Theme, 16/10 Thumbnails, 4 Categories: Ảnh, Video, Podcast, Infographic
+           ===================================================================== -->
+      <section class="apec2027-multimedia-section" id="media" aria-labelledby="multimedia-title">
+        <div class="multimedia-container">
+          <!-- Section Header Block -->
+          <div class="multimedia-header-block">
+            <h2
+              id="multimedia-title"
+              class="multimedia-main-title"
+              data-i18n-vi="Truyền thông số <span class='multimedia-title-gradient'>APEC 2027</span>"
+              data-i18n-en="Digital Media <span class='multimedia-title-gradient'>APEC 2027</span>"
+            >
+              <span class="multimedia-title-gradient">APEC 2027</span> Multimedia
+            </h2>
+            <p
+              class="multimedia-desc"
+              data-i18n-vi="Trải nghiệm toàn diện qua hình ảnh chất lượng cao, video phóng sự, podcast chuyên sâu và đồ họa thông tin trực quan về Năm APEC Việt Nam 2027."
+              data-i18n-en="Comprehensive coverage featuring high-resolution galleries, documentary videos, insightful podcasts, and interactive infographics for APEC Vietnam 2027."
+            >
+              Trải nghiệm toàn diện qua hình ảnh chất lượng cao, video phóng sự, podcast chuyên sâu
+              và đồ họa thông tin trực quan về Năm APEC Việt Nam 2027.
+            </p>
+          </div>
+
+          <!-- 4 Category Filter Pills + Tất cả -->
+          <nav class="multimedia-categories" aria-label="Danh mục đa phương tiện">
+            <button
+              type="button"
+              class="media-pill is-active"
+              data-category="all"
+              data-i18n-vi="Tất cả"
+              data-i18n-en="All Media"
+            >
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Tất cả</span>
+            </button>
+
+            <button
+              type="button"
+              class="media-pill"
+              data-category="photo"
+              data-i18n-vi="Ảnh"
+              data-i18n-en="Photos"
+            >
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+                ></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              <span>Ảnh</span>
+            </button>
+
+            <button
+              type="button"
+              class="media-pill"
+              data-category="video"
+              data-i18n-vi="Video"
+              data-i18n-en="Videos"
+            >
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span>Video</span>
+            </button>
+
+            <button
+              type="button"
+              class="media-pill"
+              data-category="podcast"
+              data-i18n-vi="Podcast"
+              data-i18n-en="Podcasts"
+            >
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+              </svg>
+              <span>Podcast</span>
+            </button>
+
+            <button
+              type="button"
+              class="media-pill"
+              data-category="infographic"
+              data-i18n-vi="Infographic"
+              data-i18n-en="Infographics"
+            >
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              <span>Infographic</span>
+            </button>
+          </nav>
+
+          <!-- Multimedia Cards Grid (2x2, all 16/10 thumbnails) -->
+          <div class="multimedia-grid">
+            <!-- 1. Category: Ảnh -->
+            <article class="media-card" data-media-type="photo">
+              <a
+                href="#media-gallery-phuquoc"
+                class="media-thumb-wrap"
+                aria-label="Xem bộ ảnh Phú Quốc trước thềm APEC 2027"
+              >
+                <img
+                  src="assets/multimedia/media-photo.jpg"
+                  alt="Phú Quốc trước thềm APEC 2027"
+                  class="media-thumb-img"
+                  loading="lazy"
+                />
+                <div class="media-thumb-overlay" aria-hidden="true"></div>
+                <span class="media-category-badge badge-photo">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+                    ></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                  </svg>
+                  <span data-i18n-vi="Ảnh" data-i18n-en="Photo">Ảnh</span>
+                </span>
+                <span class="media-counter-badge">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                  </svg>
+                  <span data-i18n-vi="28 Ảnh" data-i18n-en="28 Photos">28 Ảnh</span>
+                </span>
+              </a>
+
+              <div class="media-content-info">
+                <h3 class="media-card-title">
+                  <a
+                    href="#media-gallery-phuquoc"
+                    data-i18n-vi="Phú Quốc trước thềm APEC 2027: Diện mạo Đảo Ngọc sẵn sàng đón bạn bè quốc tế"
+                    data-i18n-en="Phu Quoc ahead of APEC 2027: Island paradise ready to welcome international guests"
+                  >
+                    Phú Quốc trước thềm APEC 2027: Diện mạo Đảo Ngọc sẵn sàng đón bạn bè quốc tế
+                  </a>
+                </h3>
+
+                <p
+                  class="media-card-desc"
+                  data-i18n-vi="Bộ phóng sự ảnh toàn cảnh ghi lại các công trình trọng điểm, cơ sở hạ tầng hội nghị và cảnh sắc thiên nhiên biển đảo tuyệt đẹp."
+                  data-i18n-en="Panoramic photo series capturing key landmarks, conference infrastructure and picturesque island landscapes."
+                >
+                  Bộ phóng sự ảnh toàn cảnh ghi lại các công trình trọng điểm, cơ sở hạ tầng hội
+                  nghị và cảnh sắc thiên nhiên biển đảo tuyệt đẹp.
+                </p>
+              </div>
+            </article>
+
+            <!-- 2. Category: Video -->
+            <article class="media-card" data-media-type="video">
+              <a
+                href="#media-video-documentary"
+                class="media-thumb-wrap"
+                aria-label="Xem video phim tư liệu APEC 2027"
+              >
+                <img
+                  src="assets/multimedia/media-video.jpg"
+                  alt="Phim tư liệu APEC 2027"
+                  class="media-thumb-img"
+                  loading="lazy"
+                />
+                <div class="media-thumb-overlay" aria-hidden="true"></div>
+                <span class="media-category-badge badge-video">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <span data-i18n-vi="Video" data-i18n-en="Video">Video</span>
+                </span>
+                <div class="media-play-overlay" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </div>
+                <span class="media-counter-badge">
+                  <span>05:45</span>
+                </span>
+              </a>
+
+              <div class="media-content-info">
+                <h3 class="media-card-title">
+                  <a
+                    href="#media-video-documentary"
+                    data-i18n-vi="Phim tư liệu: Dấu ấn Việt Nam qua các kỳ APEC và tầm nhìn hội nhập 2027"
+                    data-i18n-en="Documentary: Vietnam's milestones across APEC summits and 2027 integration vision"
+                  >
+                    Phim tư liệu: Dấu ấn Việt Nam qua các kỳ APEC và tầm nhìn hội nhập 2027
+                  </a>
+                </h3>
+
+                <p
+                  class="media-card-desc"
+                  data-i18n-vi="Những khoảnh khắc lịch sử của APEC Việt Nam 2006, 2017 và hành trình bước vào Năm APEC 2027 với tâm thế chủ động, sáng tạo."
+                  data-i18n-en="Historical milestones of APEC Viet Nam 2006, 2017 and the journey towards APEC 2027 with proactive momentum."
+                >
+                  Những khoảnh khắc lịch sử của APEC Việt Nam 2006, 2017 và hành trình bước vào Năm
+                  APEC 2027 với tâm thế chủ động, sáng tạo.
+                </p>
+              </div>
+            </article>
+
+            <!-- 3. Category: Podcast -->
+            <article class="media-card" data-media-type="podcast">
+              <a
+                href="#media-podcast-ep1"
+                class="media-thumb-wrap"
+                aria-label="Nghe Podcast APEC Dialogues #01"
+              >
+                <img
+                  src="assets/multimedia/media-podcast.jpg"
+                  alt="Podcast APEC Dialogues #01"
+                  class="media-thumb-img"
+                  loading="lazy"
+                />
+                <div class="media-thumb-overlay" aria-hidden="true"></div>
+                <span class="media-category-badge badge-podcast">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                  </svg>
+                  <span data-i18n-vi="Podcast" data-i18n-en="Podcast">Podcast</span>
+                </span>
+              </a>
+
+              <div class="media-content-info">
+                <h3 class="media-card-title">
+                  <a
+                    href="#media-podcast-ep1"
+                    data-i18n-vi="APEC Dialogues #01: Thúc đẩy liên kết kinh tế số và phát triển xanh bao trùm"
+                    data-i18n-en="APEC Dialogues #01: Driving digital economic integration and inclusive green growth"
+                  >
+                    APEC Dialogues #01: Thúc đẩy liên kết kinh tế số và phát triển xanh bao trùm
+                  </a>
+                </h3>
+
+                <p
+                  class="media-card-desc"
+                  data-i18n-vi="Lắng nghe chia sẻ từ các chuyên gia kinh tế và đại sứ về những trọng tâm ưu tiên trong nghị trình APEC 2027 tại Việt Nam."
+                  data-i18n-en="Listen to insights from senior economic experts and ambassadors on priority pillars of APEC 2027 in Vietnam."
+                >
+                  Lắng nghe chia sẻ từ các chuyên gia kinh tế và đại sứ về những trọng tâm ưu tiên
+                  trong nghị trình APEC 2027 tại Việt Nam.
+                </p>
+              </div>
+            </article>
+
+            <!-- 4. Category: Infographic -->
+            <article class="media-card" data-media-type="infographic">
+              <a
+                href="#media-infographic-21economies"
+                class="media-thumb-wrap"
+                aria-label="Xem Infographic 21 nền kinh tế thành viên APEC"
+              >
+                <img
+                  src="assets/multimedia/media-infographic.png"
+                  alt="Infographic 21 nền kinh tế thành viên APEC"
+                  class="media-thumb-img"
+                  loading="lazy"
+                />
+                <div class="media-thumb-overlay" aria-hidden="true"></div>
+                <span class="media-category-badge badge-infographic">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                  <span data-i18n-vi="Infographic" data-i18n-en="Infographic">Infographic</span>
+                </span>
+              </a>
+
+              <div class="media-content-info">
+                <h3 class="media-card-title">
+                  <a
+                    href="#media-infographic-21economies"
+                    data-i18n-vi="Infographic: 21 nền kinh tế thành viên và lộ trình sự kiện Năm APEC 2027"
+                    data-i18n-en="Infographic: 21 member economies and the roadmap for APEC 2027 Year"
+                  >
+                    Infographic: 21 nền kinh tế thành viên và lộ trình sự kiện Năm APEC 2027
+                  </a>
+                </h3>
+
+                <p
+                  class="media-card-desc"
+                  data-i18n-vi="Hệ thống hóa trực quan quy mô dân số, GDP, chuỗi cung ứng và lịch trình chuỗi hội nghị cấp cao APEC 2027."
+                  data-i18n-en="Visualizing demographic scale, GDP share, supply chains, and the high-level meeting calendar of APEC 2027."
+                >
+                  Hệ thống hóa trực quan quy mô dân số, GDP, chuỗi cung ứng và lịch trình chuỗi hội
+                  nghị cấp cao APEC 2027.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Member Economy Inspection Modal Dialog -->
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="economy-modal" id="economy-modal" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="close-modal-btn" aria-label="Đóng cửa sổ">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
-    </div>
-  </header>
 
-  <!-- Mobile Nav Drawer -->
-  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
-    <ul class="mobile-nav-list">
-      <li><a href="#about" class="mobile-nav-link" data-i18n-vi="TỔNG QUAN VỀ APEC" data-i18n-en="ABOUT APEC">TỔNG QUAN VỀ APEC</a></li>
-      <li><a href="#vietnam" class="mobile-nav-link" data-i18n-vi="VIỆT NAM VÀ APEC 2027" data-i18n-en="VIET NAM & APEC 2027">VIỆT NAM VÀ APEC 2027</a></li>
-      <li><a href="#news" class="mobile-nav-link" data-i18n-vi="TIN TỨC – SỰ KIỆN" data-i18n-en="NEWS & EVENTS">TIN TỨC – SỰ KIỆN</a></li>
-      <li><a href="#destination" class="mobile-nav-link" data-i18n-vi="ĐIỂM ĐẾN APEC 2027" data-i18n-en="DESTINATION PHU QUOC">ĐIỂM ĐẾN APEC 2027</a></li>
-      <li><a href="#press" class="mobile-nav-link" data-i18n-vi="DÀNH CHO BÁO CHÍ" data-i18n-en="PRESS CENTER">DÀNH CHO BÁO CHÍ</a></li>
-    </ul>
-  </div>
-
-  <main>
-    <!-- HERO SECTION: 3D INTERACTIVE VIEWPORT -->
-    <section class="hero-viewport" id="hero-section" aria-label="Khám phá tương tác 3D APEC 2027">
-      
-      <!-- Layer 01: Sky & Atmospheric Environment Canvas (Background) -->
-      <canvas id="sky-canvas" class="hero-canvas"></canvas>
-
-      <!-- Layer 02: The Carousel — A True 3D Perspective Ring (Exact Summit Spec) -->
-      <div class="showcase-wrapper" id="ring-container">
-        <div class="showcase" id="ring-showcase">
-          <div class="ring" id="perspective-ring"></div>
+      <div class="modal-header-row">
+        <img src="assets/flags/raw/vn.png" alt="Việt Nam" class="modal-flag-img" id="modal-flag" />
+        <div class="modal-title-group">
+          <h3 id="modal-name">VIỆT NAM</h3>
+          <p class="modal-official-name" id="modal-official">Socialist Republic of Viet Nam</p>
         </div>
       </div>
 
-      <!-- Layer 03: Central Phu Quoc Island World Canvas (Foreground) -->
-      <canvas id="island-canvas" class="hero-canvas"></canvas>
-
-      <!-- Typography & Branding Overlay (Aligned with Concept Reference) -->
-      <div class="hero-overlay">
-        <div class="hero-content">
-          <h1 class="hero-title-main">APEC VIETNAM 2027</h1>
-          <h2 class="hero-title-sub">PHÚ QUỐC</h2>
-          
-          <p class="hero-description" 
-             data-i18n-vi="Diễn đàn Hợp tác Kinh tế châu Á – Thái Bình Dương hội tụ tại Đảo Ngọc Phú Quốc, cùng 21 nền kinh tế thành viên kiến tạo tương lai phát triển bền vững và thịnh vượng."
-             data-i18n-en="The Asia-Pacific Economic Cooperation summit convenes in the Pearl Island of Phu Quoc, uniting 21 member economies to foster resilient, inclusive and sustainable shared prosperity.">
-            Diễn đàn Hợp tác Kinh tế châu Á – Thái Bình Dương hội tụ tại Đảo Ngọc Phú Quốc, cùng 21 nền kinh tế thành viên kiến tạo tương lai phát triển bền vững và thịnh vượng.
-          </p>
-
-          <a href="#summit-pillars" class="hero-cta-btn" id="explore-cta-btn">
-            <span data-i18n-vi="KHÁM PHÁ APEC 2027" data-i18n-en="EXPLORE APEC 2027">KHÁM PHÁ APEC 2027</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
+      <div class="modal-meta-grid">
+        <div class="meta-item">
+          <label data-i18n-vi="Khu vực" data-i18n-en="Region">Khu vực</label>
+          <span id="modal-region">Southeast Asia</span>
+        </div>
+        <div class="meta-item">
+          <label data-i18n-vi="Gia nhập APEC" data-i18n-en="Joined APEC">Gia nhập APEC</label>
+          <span id="modal-year">1998</span>
+        </div>
+        <div class="meta-item" style="grid-column: span 2">
+          <label data-i18n-vi="Tư cách" data-i18n-en="Status">Tư cách</label>
+          <span id="modal-status">Nền kinh tế Chủ nhà (Host Economy)</span>
         </div>
       </div>
 
-      <!-- Bottom Interactive HUD / Controls -->
-      <div class="hero-hud">
-        <div class="hud-left">
-          <div class="hud-badge">
-            <span class="hud-dot"></span>
-            <span data-i18n-vi="21 NỀN KINH TẾ THÀNH VIÊN" data-i18n-en="21 MEMBER ECONOMIES">21 NỀN KINH TẾ THÀNH VIÊN</span>
-          </div>
-        </div>
-
-        <div class="hud-center">
-          <a href="#summit-pillars" class="scroll-indicator" aria-label="Cuộn xuống để khám phá thêm">
-            <span data-i18n-vi="CUỘN ĐỂ KHÁM PHÁ" data-i18n-en="SCROLL TO EXPLORE">CUỘN ĐỂ KHÁM PHÁ</span>
-            <svg class="scroll-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-              <path d="M7 10l5 5 5-5"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Hover Tooltip for 3D Flags -->
-      <div class="flag-tooltip" id="flag-tooltip" aria-hidden="true">
-        <div class="flag-tooltip-content">
-          <img src="assets/flags/vn.png" alt="" class="tooltip-flag-thumb" id="tooltip-flag-thumb">
-          <div class="tooltip-info">
-            <span class="tooltip-name" id="tooltip-economy-name">VIỆT NAM</span>
-            <span class="tooltip-sub" id="tooltip-economy-sub">NỀN KINH TẾ CHỦ NHÀ APEC 2027</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: SUMMIT PILLARS & 21 MEMBER ECONOMIES DIRECTORY -->
-    <section class="content-section" id="summit-pillars">
-      <div class="section-container">
-        
-        <div class="section-header-block">
-          <span class="section-tag" data-i18n-vi="TRỤ CỘT HỢP TÁC" data-i18n-en="COOPERATION PILLARS">TRỤ CỘT HỢP TÁC</span>
-          <h2 class="section-title" data-i18n-vi="Hội Tụ Sức Mạnh — Kiến Tạo Tương Lai" data-i18n-en="Converging Strength — Shaping the Future">
-            Hội Tụ Sức Mạnh — Kiến Tạo Tương Lai
-          </h2>
-          <p class="section-desc" 
-             data-i18n-vi="Năm APEC 2027 do Việt Nam đăng cai tại Phú Quốc tập trung vào ba trọng tâm chiến lược nhằm thúc đẩy hợp tác liên kết kinh tế khu vực châu Á - Thái Bình Dương."
-             data-i18n-en="APEC Viet Nam 2027 in Phu Quoc focuses on three strategic pillars to advance regional economic integration across the Asia-Pacific.">
-            Năm APEC 2027 do Việt Nam đăng cai tại Phú Quốc tập trung vào ba trọng tâm chiến lược nhằm thúc đẩy hợp tác liên kết kinh tế khu vực châu Á - Thái Bình Dương.
-          </p>
-        </div>
-
-        <!-- Pillars Grid -->
-        <div class="pillars-grid">
-          <div class="pillar-card">
-            <div class="pillar-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                <path d="M2 12h20"></path>
-              </svg>
-            </div>
-            <h3 class="pillar-title" data-i18n-vi="Tăng Trưởng Xanh & Bền Vững" data-i18n-en="Green & Sustainable Growth">
-              Tăng Trưởng Xanh & Bền Vững
-            </h3>
-            <p class="pillar-text"
-               data-i18n-vi="Thúc đẩy cam kết phát thải ròng bằng không, chuyển dịch năng lượng công bằng, kinh tế tuần hoàn và bảo tồn đa dạng sinh học biển đảo."
-               data-i18n-en="Accelerating net-zero transitions, circular economy models, clean energy integration, and marine biodiversity stewardship.">
-              Thúc đẩy cam kết phát thải ròng bằng không, chuyển dịch năng lượng công bằng, kinh tế tuần hoàn và bảo tồn đa dạng sinh học biển đảo.
-            </p>
-          </div>
-
-          <div class="pillar-card">
-            <div class="pillar-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <h3 class="pillar-title" data-i18n-vi="Kinh Tế Số & Đổi Mới Sáng Tạo" data-i18n-en="Digital Economy & Innovation">
-              Kinh Tế Số & Đổi Mới Sáng Tạo
-            </h3>
-            <p class="pillar-text"
-               data-i18n-vi="Đẩy mạnh chuyển đổi số toàn diện, trí tuệ nhân tạo có trách nhiệm, thương mại điện tử xuyên biên giới và hỗ trợ doanh nghiệp MSME."
-               data-i18n-en="Advancing comprehensive digital transformation, responsible AI, cross-border e-commerce, and MSME digital enablement.">
-              Đẩy mạnh chuyển đổi số toàn diện, trí tuệ nhân tạo có trách nhiệm, thương mại điện tử xuyên biên giới và hỗ trợ doanh nghiệp MSME.
-            </p>
-          </div>
-
-          <div class="pillar-card">
-            <div class="pillar-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h3 class="pillar-title" data-i18n-vi="Kết Nối & Phát Triển Bao Trùm" data-i18n-en="Connectivity & Inclusivity">
-              Kết Nối & Phát Triển Bao Trùm
-            </h3>
-            <p class="pillar-text"
-               data-i18n-vi="Tăng cường khả năng chống chịu chuỗi cung ứng, tự do hóa thương mại đầu tư và nâng cao quyền năng kinh tế cho mọi tầng lớp xã hội."
-               data-i18n-en="Fortifying supply chain resilience, high-standard trade facilitation, and inclusive economic empowerment for all communities.">
-              Tăng cường khả năng chống chịu chuỗi cung ứng, tự do hóa thương mại đầu tư và nâng cao quyền năng kinh tế cho mọi tầng lớp xã hội.
-            </p>
-          </div>
-        </div>
-
-        <!-- 21 Member Economies Directory -->
-        <div class="economies-roster">
-          <div class="roster-header">
-            <div>
-              <h3 class="roster-title" data-i18n-vi="21 Nền Kinh Tế Thành Viên APEC" data-i18n-en="21 APEC Member Economies">
-                21 Nền Kinh Tế Thành Viên APEC
-              </h3>
-              <p style="font-size: 14px; opacity: 0.8; margin-top: 4px;" data-i18n-vi="Nhấn vào cờ trên không gian 3D hoặc danh sách dưới đây để xem chi tiết" data-i18n-en="Click any flag in 3D or the list below to view economy profile">
-                Nhấn vào cờ trên không gian 3D hoặc danh sách dưới đây để xem chi tiết
-              </p>
-            </div>
-            <div class="roster-count">21 / 21 ECONOMIES</div>
-          </div>
-
-          <div class="economies-grid" id="economies-grid-container">
-            <!-- Dynamically populated from APEC_CONFIG in main.js -->
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- Member Economy Inspection Modal Dialog -->
-  <div class="modal-backdrop" id="modal-backdrop"></div>
-  <div class="economy-modal" id="economy-modal" role="dialog" aria-modal="true">
-    <button class="modal-close-btn" id="close-modal-btn" aria-label="Đóng cửa sổ">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-
-    <div class="modal-header-row">
-      <img src="assets/flags/vn.png" alt="" class="modal-flag-img" id="modal-flag">
-      <div class="modal-title-group">
-        <h3 id="modal-name">VIỆT NAM</h3>
-        <p class="modal-official-name" id="modal-official">Socialist Republic of Viet Nam</p>
+      <div class="modal-theme-box">
+        <p id="modal-theme">Host Economy — APEC 2027 Phú Quốc</p>
       </div>
     </div>
 
-    <div class="modal-meta-grid">
-      <div class="meta-item">
-        <label data-i18n-vi="Khu vực" data-i18n-en="Region">Khu vực</label>
-        <span id="modal-region">Southeast Asia</span>
+    <!-- Semantic Footer -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <p>&copy; Bản quyền thuộc về Thông Tấn Xã Việt Nam</p>
+        <p style="opacity: 0.7">
+          Diễn đàn Hợp tác Kinh tế châu Á – Thái Bình Dương · Phú Quốc, Việt Nam
+        </p>
       </div>
-      <div class="meta-item">
-        <label data-i18n-vi="Gia nhập APEC" data-i18n-en="Joined APEC">Gia nhập APEC</label>
-        <span id="modal-year">1998</span>
-      </div>
-      <div class="meta-item" style="grid-column: span 2;">
-        <label data-i18n-vi="Tư cách" data-i18n-en="Status">Tư cách</label>
-        <span id="modal-status">Nền kinh tế Chủ nhà (Host Economy)</span>
-      </div>
-    </div>
+    </footer>
 
-    <div class="modal-theme-box">
-      <p id="modal-theme">Host Economy — APEC 2027 Phú Quốc</p>
-    </div>
-  </div>
+    <!-- Script dependencies (Local & Offline Ready) -->
+    <script src="libs/three.min.js"></script>
+    <script src="libs/gsap.min.js"></script>
+    <script src="libs/ScrollTrigger.min.js"></script>
+    <script src="libs/lenis.min.js"></script>
 
-  <!-- Semantic Footer -->
-  <footer class="main-footer">
-    <div class="footer-content">
-      <p>&copy; 2027 APEC VIET NAM 2027 NATIONAL SECRETARIAT. All Rights Reserved.</p>
-      <p style="opacity: 0.7;">Diễn đàn Hợp tác Kinh tế châu Á – Thái Bình Dương · Phú Quốc, Việt Nam</p>
-    </div>
-  </footer>
+    <!-- Summit Application Logic -->
+    <script src="js/config.js"></script>
+    <script src="js/sky.js"></script>
+    <script src="js/phuquoc.js"></script>
+    <script src="js/flags.js"></script>
+    <script src="js/ring.js"></script>
+    <script src="js/scene.js"></script>
+    <script src="js/interaction.js"></script>
+    <script src="js/intro.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/vietnam-tabs.js"></script>
+    <script src="js/news-events.js"></script>
 
-  <!-- Script dependencies (Local & Offline Ready) -->
-  <script src="libs/three.min.js"></script>
-  <script src="libs/gsap.min.js"></script>
-  
-  <!-- Summit Application Logic -->
-  <script src="js/config.js"></script>
-  <script src="js/sky.js"></script>
-  <script src="js/phuquoc.js"></script>
-  <script src="js/flags.js"></script>
-  <script src="js/ring.js"></script>
-  <script src="js/scene.js"></script>
-  <script src="js/interaction.js"></script>
-  <script src="js/intro.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Auto-populate 21 economies list in Section 2 -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const grid = document.getElementById('economies-grid-container');
-      if (grid && window.APEC_CONFIG) {
-        window.APEC_CONFIG.memberEconomies.forEach(eco => {
-          const pill = document.createElement('div');
-          pill.className = 'economy-pill';
-          pill.innerHTML = `
-            <img src="${eco.flagUrl}" alt="${eco.name}" class="economy-pill-flag">
-            <span class="economy-pill-name">${eco.name}</span>
+    <!-- Auto-populate 21 economies list in Section 2 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const grid = document.getElementById("economies-grid-container");
+        if (grid && window.APEC_CONFIG) {
+          window.APEC_CONFIG.memberEconomies.forEach((eco) => {
+            const pill = document.createElement("div");
+            pill.className = "economy-pill";
+            const isVi = document.documentElement.lang === "vi";
+            const displayName = isVi ? eco.nameVi || eco.name : eco.name;
+            pill.innerHTML = `
+            <img src="assets/flags/raw/${eco.id}.png" alt="${eco.name}" class="economy-pill-flag">
+            <span class="economy-pill-name" data-vi="${eco.nameVi || eco.name}" data-en="${eco.name}">${displayName}</span>
           `;
-          pill.addEventListener('click', () => {
-            if (window.apecApp && window.apecApp.interaction) {
-              window.apecApp.interaction.openEconomyModal(eco);
-            }
+            pill.addEventListener("click", () => {
+              if (window.apecApp && window.apecApp.interaction) {
+                window.apecApp.interaction.openEconomyModal(eco);
+              }
+            });
+            grid.appendChild(pill);
           });
-          grid.appendChild(pill);
-        });
-      }
-    });
-  </script>
-</body>
+        }
+      });
+    </script>
+  </body>
 </html>

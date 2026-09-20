@@ -1,0 +1,233 @@
+/* ==========================================================================
+   APEC VIET NAM 2027 — PUBLIC OPINION SECTION (DỰ LUẬN)
+   Figma Node: 139:430 (public-opinion)
+   Specifications:
+   - 3 Column Grid (w: 330px, container: 1040px, gap: 25px)
+   - Column Card: bg-white, border: 1px solid rgba(48,142,254,0.3), drop-shadow: 0 10px 10px rgba(48,142,254,0.1), rounded: 20px
+   - Heading: Montserrat ExtraBold 20px + Blue Circle Arrow
+   - Featured Article: 160:100 aspect ratio thumb + Montserrat SemiBold 16px title
+   - Divider: rgba(48,142,254,0.3) 1px
+   - Text Items: Montserrat SemiBold 16px title
+   ========================================================================== */
+
+.public-opinion-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 30px 24px 100px;
+  background: #ffffff;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.opinion-container {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  gap: 25px;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Column Card (Node 139:472, 139:473, 139:484)
+   -------------------------------------------------------------------------- */
+.opinion-col {
+  flex: 1 1 0;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid rgba(48, 142, 254, 0.3);
+  box-shadow: 0px 10px 10px rgba(48, 142, 254, 0.1);
+  border-radius: 20px;
+  padding: 20px 20px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.opinion-col:hover {
+  border-color: rgba(48, 142, 254, 0.55);
+  box-shadow: 0px 14px 24px rgba(48, 142, 254, 0.16);
+  transform: translateY(-2px);
+}
+
+/* Column Header (Node 139:454) */
+.opinion-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.opinion-col-title {
+  flex: 1;
+  min-width: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+  word-break: break-word;
+}
+
+.opinion-col-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.opinion-col-arrow:hover {
+  transform: scale(1.12);
+}
+
+.opinion-col-arrow svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+/* Featured Article Box (Node 139:449) */
+.opinion-featured-news {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.opinion-thumb {
+  width: 100%;
+  aspect-ratio: 160 / 100;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f0f4f8;
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+.opinion-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.opinion-featured-news:hover .opinion-thumb img {
+  transform: scale(1.045);
+}
+
+.opinion-featured-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #111111;
+  margin: 0;
+  word-break: break-word;
+  transition: color 0.25s ease;
+  text-decoration: none;
+}
+
+.opinion-featured-title:hover,
+.opinion-featured-news:hover .opinion-featured-title {
+  color: #1565e8;
+}
+
+/* Divider Line (Node 139:466, 139:470) */
+.opinion-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(48, 142, 254, 0.3);
+  border: none;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Text Article Item (Node 139:468, 139:471) */
+.opinion-text-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.opinion-text-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111111;
+  margin: 0;
+  word-break: break-word;
+  transition: color 0.25s ease;
+  text-decoration: none;
+}
+
+.opinion-text-title:hover,
+.opinion-text-item:hover .opinion-text-title {
+  color: #1565e8;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .opinion-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .opinion-col {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 280px;
+  }
+
+  .opinion-col:last-child {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .public-opinion-section {
+    padding: 20px 16px 80px;
+  }
+
+  .opinion-container {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .opinion-col {
+    flex: 1 1 100%;
+    width: 100%;
+    padding: 16px 16px 24px 16px;
+    border-radius: 16px;
+    gap: 16px;
+  }
+
+  .opinion-col-title {
+    font-size: 18px;
+  }
+
+  .opinion-featured-title,
+  .opinion-text-title {
+    font-size: 15px;
+  }
+}

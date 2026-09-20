@@ -11,7 +11,7 @@ class PhuQuocWorld {
 
     // Central Phu Quoc World configuration
     const cfg = window.APEC_CONFIG.scene.phuquoc;
-    this.baseY = (cfg && cfg.groupY !== undefined) ? cfg.groupY : -3.2;
+    this.baseY = (cfg && cfg.groupY !== undefined) ? cfg.groupY : -1.2;
 
     this.group.scale.set(0.36, 0.36, 0.36);
     this.group.position.set(0, this.baseY, 0);
@@ -116,7 +116,7 @@ class PhuQuocWorld {
     this.mesh = new THREE.Mesh(geo, this.worldMaterial);
     this.mesh.position.set(0, cfg.yOffset, cfg.zOffset);
     this.mesh.rotation.x = cfg.rotationX;
-    
+
     this.group.add(this.mesh);
   }
 
@@ -221,7 +221,7 @@ class PhuQuocWorld {
     const ringProgress = (this.time * 0.75) % 1.0;
     const ringScale = 0.9 + ringProgress * 0.8;
     const ringOpacity = Math.max(0, 1.0 - ringProgress) * 0.75;
-    
+
     this.venueRing.scale.set(ringScale, ringScale, 1);
     this.ringMat.opacity = ringOpacity * (1.0 + this.hoverIntensity * 0.5);
     this.venueGlow.scale.set(1.5 * pulse, 1.5 * pulse, 1);

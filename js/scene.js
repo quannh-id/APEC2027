@@ -9,8 +9,12 @@ class ApecScene {
     this.skyCanvas = skyCanvas || document.getElementById('sky-canvas');
     this.islandCanvas = islandCanvas || document.getElementById('island-canvas');
     
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
+    this.onResize = this.onResize.bind(this);
+
+    const heroEl = document.getElementById('hero-section');
+    this.width = heroEl ? heroEl.clientWidth : (document.documentElement.clientWidth || window.innerWidth);
+    this.height = heroEl ? heroEl.clientHeight : window.innerHeight;
+    this.viewportHeight = window.innerHeight;
 
     this.clock = new THREE.Clock();
     this.time = 0;
@@ -19,12 +23,16 @@ class ApecScene {
 
     this.mouseParallax = { x: 0, y: 0, targetX: 0, targetY: 0 };
     this.scrollProgress = 0;
+    this.scrollY = 0;
 
     this.initRenderers();
     this.initCamera();
     this.initLights();
     this.initLayers();
     this.initEvents();
+
+    // Immediate resize synchronization on load so canvas aspect is 100% round on first render
+    this.onResize();
   }
 
   initRenderers() {
@@ -40,7 +48,7 @@ class ApecScene {
         alpha: false
       });
       this.skyRenderer.setPixelRatio(maxPr);
-      this.skyRenderer.setSize(this.width, this.height);
+      this.skyRenderer.setSize(this.width, this.viewportHeight);
       this.skyRenderer.outputEncoding = THREE.sRGBEncoding;
     }
 
@@ -114,6 +122,7 @@ class ApecScene {
       group: { scale: { set: () => {} }, position: { y: 0, z: 0 } },
       targetOrbitSpeed: 1.0,
       setHoveredFlag: () => {},
+      flagMeshes: [],
       update: () => {}
     };
   }
@@ -137,8 +146,10 @@ class ApecScene {
   }
 
   onResize() {
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
+    const heroEl = document.getElementById('hero-section');
+    this.width = heroEl ? heroEl.clientWidth : (document.documentElement.clientWidth || window.innerWidth);
+    this.height = heroEl ? heroEl.clientHeight : window.innerHeight;
+    this.viewportHeight = window.innerHeight;
 
     this.camera.aspect = this.width / this.height;
 
@@ -155,10 +166,15 @@ class ApecScene {
 
     this.camera.updateProjectionMatrix();
 
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const maxPr = isMobile ? 1.5 : Math.min(window.devicePixelRatio || 1, 2.0);
+
     if (this.skyRenderer) {
-      this.skyRenderer.setSize(this.width, this.height);
+      this.skyRenderer.setPixelRatio(maxPr);
+      this.skyRenderer.setSize(this.width, this.viewportHeight);
     }
     if (this.islandRenderer) {
+      this.islandRenderer.setPixelRatio(maxPr);
       this.islandRenderer.setSize(this.width, this.height);
     }
   }
@@ -166,6 +182,13 @@ class ApecScene {
   setMouseParallax(nx, ny) {
     this.mouseParallax.targetX = nx;
     this.mouseParallax.targetY = ny;
+  }
+
+  setScroll(scrollY) {
+    this.scrollY = scrollY;
+    const heroEl = document.getElementById('hero-section');
+    const heroHeight = heroEl ? heroEl.clientHeight : window.innerHeight;
+    this.scrollProgress = Math.max(0, Math.min(1.0, scrollY / (heroHeight * 0.85)));
   }
 
   setScrollProgress(progress) {
@@ -189,13 +212,9 @@ class ApecScene {
     this.mouseParallax.x += (this.mouseParallax.targetX - this.mouseParallax.x) * 0.05;
     this.mouseParallax.y += (this.mouseParallax.targetY - this.mouseParallax.y) * 0.05;
 
-    // Scroll effect: camera zooms slightly closer into Phu Quoc
-    const scrollZoomZ = -this.scrollProgress * 5.5;
-    const scrollElevY = -this.scrollProgress * 1.8;
-
     this.camera.position.x = this.cameraBasePos.x + driftX + this.mouseParallax.x * 0.8;
-    this.camera.position.y = this.cameraBasePos.y + driftY + this.mouseParallax.y * 0.5 + scrollElevY;
-    this.camera.position.z = this.cameraBasePos.z + breathingZ + scrollZoomZ;
+    this.camera.position.y = this.cameraBasePos.y + driftY + this.mouseParallax.y * 0.5;
+    this.camera.position.z = this.cameraBasePos.z + breathingZ;
 
     const currentLookAt = this.cameraLookAt.clone();
     currentLookAt.x += this.mouseParallax.x * 0.2;

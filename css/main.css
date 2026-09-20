@@ -5,58 +5,114 @@
 
 :root {
   /* Official Summit Color Palette */
-  --color-primary-navy: #0B3066;
-  --color-deep-blue: #08214D;
-  --color-ocean-cyan: #0284C7;
-  --color-tropical-sky: #38BDF8;
-  --color-sky-light: #E0F2FE;
-  --color-sunrise-gold: #F59E0B;
-  --color-vietnam-red: #DA251D;
-  
+  --color-primary-navy: #0b3066;
+  --color-deep-blue: #08214d;
+  --color-ocean-cyan: #0284c7;
+  --color-tropical-sky: #38bdf8;
+  --color-sky-light: #e0f2fe;
+  --color-sunrise-gold: #f59e0b;
+  --color-vietnam-red: #da251d;
+
   /* Diplomatic Neutrals */
-  --color-bg-light: #F8FAFC;
-  --color-text-dark: #0F172A;
+  --color-bg-light: #f8fafc;
+  --color-text-dark: #0f172a;
   --color-text-muted: #475569;
-  --color-text-light: #FFFFFF;
+  --color-text-light: #ffffff;
   --color-text-subtle: rgba(255, 255, 255, 0.78);
-  
+
   /* Glassmorphism Tokens */
   --glass-bg-nav: rgba(255, 255, 255, 0.72);
   --glass-border-nav: rgba(255, 255, 255, 0.45);
   --glass-shadow: 0 16px 36px -8px rgba(11, 48, 102, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
   --glass-card: rgba(255, 255, 255, 0.88);
   --glass-card-border: rgba(255, 255, 255, 0.6);
-  
+
   /* Typography */
-  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
+  --font-heading: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
   /* Layout */
   --header-height: 84px;
   --container-max: 1360px;
   --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Global Shared Page Background */
+.page-bg-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.page-bg-hero {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(
+      circle at 72% 16%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(224, 242, 254, 0.82) 18%,
+      rgba(56, 189, 248, 0.35) 45%,
+      transparent 70%
+    ),
+    linear-gradient(180deg, #0284c7 0%, #38bdf8 26%, #7dd3fc 54%, #bae6fd 80%, #e0f2fe 100%);
+  z-index: 1;
+}
+
+.page-bg-sky {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.page-bg-next {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  opacity: 0;
+  z-index: 3;
+  will-change: opacity;
+}
+
 /* Reset & Base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: var(--font-body);
   color: var(--color-text-dark);
-  background-color: #0b2447;
-  scroll-behavior: smooth;
+  background-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+  background-color: transparent;
 }
 
 body.modal-open {
@@ -75,10 +131,20 @@ body.modal-open {
   align-items: center;
   justify-content: space-between;
   padding: 0 48px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.75) 65%, rgba(255, 255, 255, 0) 100%);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    background 0.4s ease,
+    backdrop-filter 0.4s ease,
+    -webkit-backdrop-filter 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.main-header.is-transparent {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .header-left {
@@ -114,7 +180,7 @@ body.modal-open {
 
 .nav-link {
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: var(--color-primary-navy);
@@ -126,7 +192,7 @@ body.modal-open {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -262,10 +328,10 @@ body.modal-open {
 /* Section 2: Summit Pillars & Host City Showcase */
 .content-section {
   position: relative;
-  background: #FFFFFF;
+  background: transparent;
   padding: 120px 48px 100px;
   z-index: 10;
-  border-top: 1px solid rgba(2, 132, 199, 0.15);
+  border-top: none;
 }
 
 .section-container {
@@ -329,8 +395,8 @@ body.modal-open {
 }
 
 .pillar-card {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 20px;
   padding: 40px 32px;
   transition: all 0.35s var(--transition-smooth);
@@ -339,7 +405,7 @@ body.modal-open {
 }
 
 .pillar-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -352,7 +418,7 @@ body.modal-open {
 
 .pillar-card:hover {
   transform: translateY(-8px);
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0 20px 40px rgba(11, 48, 102, 0.08);
   border-color: rgba(2, 132, 199, 0.3);
 }
@@ -461,7 +527,7 @@ body.modal-open {
 
 /* Footer */
 .main-footer {
-  background: #040D1E;
+  background: #040d1e;
   color: rgba(255, 255, 255, 0.7);
   padding: 48px;
   font-size: 13px;
@@ -496,7 +562,7 @@ body.modal-open {
   transform: translate(-50%, -50%) scale(0.92);
   width: 90%;
   max-width: 580px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 28px;
   padding: 36px;
   box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.4);
@@ -520,7 +586,7 @@ body.modal-open {
   position: absolute;
   top: 24px;
   right: 24px;
-  background: #F1F5F9;
+  background: #f1f5f9;
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -534,7 +600,7 @@ body.modal-open {
 }
 
 .modal-close-btn:hover {
-  background: #E2E8F0;
+  background: #e2e8f0;
   transform: rotate(90deg);
 }
 
@@ -546,11 +612,15 @@ body.modal-open {
 }
 
 .modal-flag-img {
-  width: 72px;
-  height: 144px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  width: 105px;
+  height: 70px;
+  object-fit: fill;
+  border-radius: 10px;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.16),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
 }
 
 .modal-title-group h3 {
@@ -571,7 +641,7 @@ body.modal-open {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  background: #F8FAFC;
+  background: #f8fafc;
   border-radius: 16px;
   padding: 18px;
   margin-bottom: 20px;
@@ -613,15 +683,19 @@ body.modal-open {
   .main-header {
     padding: 0 24px;
   }
+
   .nav-menu {
     display: none;
   }
+
   .mobile-menu-toggle {
     display: block;
   }
+
   .pillars-grid {
     grid-template-columns: 1fr;
   }
+
   .economies-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -631,21 +705,26 @@ body.modal-open {
   .section-title {
     font-size: 28px;
   }
+
   .content-section {
     padding: 80px 20px;
   }
+
   .economies-roster {
     padding: 28px 20px;
   }
+
   .economies-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .modal-header-row {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .modal-flag-img {
-    width: 60px;
-    height: 120px;
+    width: 90px;
+    height: 60px;
   }
 }

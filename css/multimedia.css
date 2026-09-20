@@ -1,0 +1,634 @@
+/* ==========================================================================
+   APEC VIET NAM 2027 — MULTIMEDIA SECTION (ĐA PHƯƠNG TIỆN)
+   Theme: Dark Theme with Brand Blues, Glassmorphism, Glossy Finishes & Glows
+   Categories: Ảnh (Photos), Video, Podcast, Infographic
+   Thumbnail Aspect Ratio: 16 / 10 (Consistent with other sections)
+   ========================================================================== */
+
+.apec2027-multimedia-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 100px 24px 110px;
+  background-color: #020817;
+  background-image:
+    radial-gradient(circle at 50% 12%, rgba(0, 114, 255, 0.28) 0%, transparent 60%),
+    radial-gradient(circle at 15% 45%, rgba(0, 240, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 85% 65%, rgba(21, 101, 232, 0.22) 0%, transparent 55%),
+    linear-gradient(180deg, #020817 0%, #051438 50%, #020817 100%);
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Subtle Glowing Light Leak Blooms */
+.apec2027-multimedia-section::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse,
+    rgba(0, 240, 255, 0.22) 0%,
+    rgba(0, 114, 255, 0.08) 50%,
+    transparent 75%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.apec2027-multimedia-section::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: 10%;
+  width: 600px;
+  height: 350px;
+  background: radial-gradient(ellipse, rgba(0, 114, 255, 0.2) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.multimedia-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   1. Section Header Block
+   -------------------------------------------------------------------------- */
+.multimedia-header-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.multimedia-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 100px;
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  box-shadow:
+    0 0 16px rgba(0, 240, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  color: #00f0ff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.multimedia-badge-tag .badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+  animation: pulseCyan 2s infinite ease-in-out;
+}
+
+@keyframes pulseCyan {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+.multimedia-main-title {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 3.5vw, 40px);
+  line-height: 1.22;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+.multimedia-title-gradient {
+  background: linear-gradient(99.67deg, #00f0ff 0%, #308efe 55%, #7ab3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #00f0ff;
+  display: inline-block;
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+.multimedia-desc {
+  margin: 0;
+  max-width: 680px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #a5b9dc;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   2. Category Filter Pills (Ảnh, Video, Podcast, Infographic)
+   -------------------------------------------------------------------------- */
+.multimedia-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.media-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  border-radius: 100px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #c9d8f3;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.media-pill svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  transition: transform 0.25s ease;
+}
+
+.media-pill:hover {
+  background: rgba(0, 114, 255, 0.16);
+  border-color: rgba(0, 240, 255, 0.45);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 22px rgba(0, 114, 255, 0.28),
+    0 0 16px rgba(0, 240, 255, 0.2);
+}
+
+.media-pill:hover svg {
+  transform: scale(1.1);
+}
+
+.media-pill.is-active {
+  background: linear-gradient(135deg, rgba(21, 101, 232, 0.85) 0%, rgba(0, 191, 255, 0.8) 100%);
+  border-color: #5bc8ff;
+  border-top-color: #ffffff;
+  color: #ffffff;
+  box-shadow:
+    0 0 28px rgba(0, 240, 255, 0.4),
+    0 4px 14px rgba(0, 114, 255, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   3. Multimedia Grid (2 Columns, 16/10 Aspect Ratio)
+   -------------------------------------------------------------------------- */
+.multimedia-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Glassmorphic Dark Card */
+.media-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(13, 27, 60, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.26);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.45),
+    0 2px 8px rgba(0, 114, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Glossy diagonal reflection sheen across top half */
+.media-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 65%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.media-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 240, 255, 0.55);
+  box-shadow:
+    0 22px 42px -8px rgba(0, 0, 0, 0.65),
+    0 0 32px 4px rgba(0, 114, 255, 0.35),
+    0 0 18px 2px rgba(0, 240, 255, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Thumbnail Container (Strict 16 / 10 Aspect Ratio)
+   -------------------------------------------------------------------------- */
+.media-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #091734;
+}
+
+.media-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.media-card:hover .media-thumb-img {
+  transform: scale(1.06);
+}
+
+/* Vignette bottom shadow on thumbnail for text/badge readability */
+.media-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 8, 23, 0.3) 0%,
+    transparent 35%,
+    rgba(2, 8, 23, 0.4) 70%,
+    rgba(2, 8, 23, 0.85) 100%
+  );
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+/* Category Badge on Thumbnail Top-Left */
+.media-category-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.badge-photo {
+  background: rgba(14, 165, 233, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  color: #7dd3fc;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.badge-video {
+  background: rgba(239, 68, 68, 0.3);
+  border: 1px solid rgba(248, 113, 113, 0.5);
+  color: #fca5a5;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.badge-podcast {
+  background: rgba(168, 85, 247, 0.3);
+  border: 1px solid rgba(192, 132, 252, 0.5);
+  color: #d8b4fe;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+.badge-infographic {
+  background: rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  color: #6ee7b7;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Feature Overlay Badges (Duration, Count, Audio Wave) */
+.media-counter-badge {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+/* Pulsing Glowing Video Play Button */
+.media-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 114, 255, 0.85) 0%, rgba(0, 240, 255, 0.95) 100%);
+  box-shadow:
+    0 0 28px rgba(0, 240, 255, 0.6),
+    0 0 10px rgba(0, 114, 255, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.media-play-overlay svg {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+  margin-left: 3px;
+}
+
+.media-card:hover .media-play-overlay {
+  transform: translate(-50%, -50%) scale(1.14);
+  box-shadow:
+    0 0 38px rgba(0, 240, 255, 0.85),
+    0 0 16px rgba(0, 114, 255, 1);
+}
+
+/* Animated Soundwave for Podcast */
+.media-soundwave-wrap {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 14px;
+}
+
+.media-soundwave-wrap span {
+  width: 2.5px;
+  background: #d8b4fe;
+  border-radius: 2px;
+  animation: waveAnim 1.2s infinite ease-in-out;
+}
+
+.media-soundwave-wrap span:nth-child(1) {
+  height: 6px;
+  animation-delay: 0.1s;
+}
+.media-soundwave-wrap span:nth-child(2) {
+  height: 12px;
+  animation-delay: 0.3s;
+}
+.media-soundwave-wrap span:nth-child(3) {
+  height: 8px;
+  animation-delay: 0.2s;
+}
+.media-soundwave-wrap span:nth-child(4) {
+  height: 14px;
+  animation-delay: 0.4s;
+}
+
+@keyframes waveAnim {
+  0%,
+  100% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Card Content Info Box
+   -------------------------------------------------------------------------- */
+.media-content-info {
+  position: relative;
+  z-index: 3;
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.media-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #7b94bf;
+}
+
+.media-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.media-meta-item svg {
+  width: 14px;
+  height: 14px;
+  stroke: #7b94bf;
+}
+
+.media-card-title {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.38;
+  color: #ffffff;
+  transition: color 0.25s ease;
+}
+
+.media-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.media-card:hover .media-card-title {
+  color: #60c4ff;
+}
+
+.media-card-desc {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #9bb1d4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card Action Link at Bottom */
+.media-card-action {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #00f0ff;
+  transition:
+    gap 0.2s ease,
+    color 0.2s ease;
+}
+
+.media-action-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.media-card-action svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  transition: transform 0.25s ease;
+}
+
+.media-card:hover .media-card-action svg {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Filter Behavior (JS Filtering)
+   -------------------------------------------------------------------------- */
+.media-card.is-hidden {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Layout Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .apec2027-multimedia-section {
+    padding: 70px 20px 80px;
+  }
+
+  .multimedia-container {
+    gap: 32px;
+  }
+
+  .multimedia-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .media-card-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .apec2027-multimedia-section {
+    padding: 55px 16px 65px;
+  }
+
+  .multimedia-header-block {
+    gap: 12px;
+  }
+
+  .multimedia-badge-tag {
+    font-size: 11px;
+    padding: 5px 14px;
+  }
+
+  .multimedia-main-title {
+    font-size: 24px;
+  }
+
+  .multimedia-desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .multimedia-categories {
+    gap: 8px;
+  }
+
+  .media-pill {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .media-content-info {
+    padding: 18px 16px 20px;
+  }
+
+  .media-card-title {
+    font-size: 17px;
+  }
+
+  .media-card-desc {
+    font-size: 13px;
+  }
+}

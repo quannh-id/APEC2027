@@ -1,0 +1,469 @@
+/* ==========================================================================
+   APEC VIET NAM 2027 — DESTINATION SECTION (ĐIỂM ĐẾN APEC 2027)
+   Figma Node: 150:521 (APEC2027-destination)
+   Specifications:
+   - Container max-width: 1040px
+   - Background: assets/destination/bg-destination.png (1440x1461, cover)
+   - Header: Montserrat SemiBold 24px + ExtraBold 36px (#00328E)
+   - Description: Inter Regular 20px (#3E68B0, max-width 599px)
+   - Categories: Pills with border 1px rgba(48,142,254,0.3), shadow 0 10px 10px rgba(48,142,254,0.1)
+   - Featured Card: 1040px, 2px solid rgba(255,255,255,0.8), shadow 0 5px 10px rgba(96,163,249,0.2)
+   - Featured Left: 650px x 406px image with gradient fade mask
+   - Featured Right: Glassmorphic blur(5px) bg rgba(255,255,255,0.6)
+   - Secondary Grid: 2 columns (500px each, gap 40px)
+   - Titles: Gradient linear-gradient(99.67deg, #0D82E2 0.52%, #18419F 94.02%)
+   - CTA: Gradient #1565e8 -> #29a8ff with neon cyan/blue glow shadow
+   ========================================================================== */
+
+.apec2027-destination-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 90px 24px 100px;
+  background-color: #f2f7ff;
+  background-image: url("../assets/destination/bg-destination.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.destination-container {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Section Header Block (Node 150:566)
+   -------------------------------------------------------------------------- */
+.destination-header-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.destination-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.destination-label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #00328e;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.destination-main-title {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.22;
+  color: #00328e;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.destination-desc {
+  margin: 0;
+  max-width: 599px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.45;
+  color: #3e68b0;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Categories Filter Bar (Node 150:525)
+   -------------------------------------------------------------------------- */
+.destination-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.destination-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  background: #ffffff;
+  border: 1px solid rgba(48, 142, 254, 0.3);
+  box-shadow: 0px 10px 10px rgba(48, 142, 254, 0.1);
+  border-radius: 100px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.3;
+  color: #00328e;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+  user-select: none;
+}
+
+.destination-pill:hover,
+.destination-pill.is-active {
+  background: linear-gradient(90deg, #1565e8 0%, #29a8ff 100%);
+  color: #ffffff;
+  border-color: #5bc8ff;
+  box-shadow: 0px 8px 18px rgba(21, 101, 232, 0.25);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Featured Destination Card (Node 150:609)
+   -------------------------------------------------------------------------- */
+.destination-featured-card {
+  display: flex;
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(96, 163, 249, 0.2);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.destination-featured-card:hover {
+  transform: translateY(-4px);
+  border-color: #ffffff;
+  box-shadow: 0px 16px 30px rgba(96, 163, 249, 0.28);
+}
+
+.destination-featured-thumb {
+  position: relative;
+  flex: 0 0 62.5%;
+  min-width: 0;
+  height: 406px;
+  overflow: hidden;
+}
+
+.destination-featured-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.destination-featured-thumb::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 140px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.85) 100%);
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.destination-featured-content {
+  flex: 1 1 37.5%;
+  min-width: 0;
+  padding: 34px 32px 34px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.destination-featured-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Gradient Card Title */
+.destination-card-title {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.35;
+  background: linear-gradient(99.67deg, #0d82e2 0.52%, #18419f 94.02%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #0d82e2;
+  transition: opacity 0.2s ease;
+}
+
+.destination-card-title a {
+  text-decoration: none;
+}
+
+.destination-card-desc {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #3e68b0;
+}
+
+/* CTA Button (Node 150:610) */
+.destination-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  gap: 12px;
+  padding: 12px 28px;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #1565e8 0%, #29a8ff 100%);
+  border: 1.5px solid #5bc8ff;
+  box-shadow:
+    0px 0px 32px 4px rgba(127, 223, 255, 0.2),
+    0px 2px 8px rgba(0, 191, 255, 0.33),
+    0px 6px 22px 2px rgba(30, 144, 255, 0.5);
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.destination-cta-btn svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.destination-cta-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow:
+    0px 0px 38px 6px rgba(127, 223, 255, 0.35),
+    0px 4px 12px rgba(0, 191, 255, 0.45),
+    0px 8px 26px 4px rgba(30, 144, 255, 0.6);
+}
+
+.destination-cta-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Secondary Destination Grid (Node 150:645)
+   -------------------------------------------------------------------------- */
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.destination-grid-card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(96, 163, 249, 0.2);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.destination-grid-card:hover {
+  transform: translateY(-4px);
+  border-color: #ffffff;
+  box-shadow: 0px 16px 30px rgba(96, 163, 249, 0.28);
+}
+
+.destination-grid-thumb {
+  position: relative;
+  width: 100%;
+  height: 312px;
+  overflow: hidden;
+  background: #eef5ff;
+}
+
+.destination-grid-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.destination-grid-card:hover .destination-grid-thumb img,
+.destination-featured-card:hover .destination-featured-thumb img {
+  transform: scale(1.04);
+}
+
+.destination-grid-info {
+  flex: 1;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .apec2027-destination-section {
+    padding: 70px 20px 80px;
+  }
+
+  .destination-container {
+    gap: 32px;
+  }
+
+  .destination-featured-card {
+    flex-direction: column;
+  }
+
+  .destination-featured-thumb {
+    flex: none;
+    width: 100%;
+    height: 300px;
+  }
+
+  .destination-featured-thumb::after {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.85) 100%
+    );
+  }
+
+  .destination-featured-content {
+    flex: none;
+    padding: 28px 24px;
+  }
+
+  .destination-grid {
+    gap: 24px;
+  }
+
+  .destination-grid-thumb {
+    height: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .apec2027-destination-section {
+    padding: 50px 16px 60px;
+  }
+
+  .destination-header-block {
+    gap: 12px;
+  }
+
+  .destination-label {
+    font-size: 20px;
+  }
+
+  .destination-main-title {
+    font-size: 28px;
+  }
+
+  .destination-desc {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .destination-categories {
+    gap: 10px;
+  }
+
+  .destination-pill {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .destination-featured-thumb {
+    height: 220px;
+  }
+
+  .destination-featured-content {
+    padding: 22px 18px;
+  }
+
+  .destination-card-title {
+    font-size: 20px;
+  }
+
+  .destination-card-desc {
+    font-size: 14px;
+  }
+
+  .destination-cta-btn {
+    padding: 10px 22px;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .destination-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .destination-grid-thumb {
+    height: 210px;
+  }
+
+  .destination-grid-info {
+    padding: 18px;
+  }
+}

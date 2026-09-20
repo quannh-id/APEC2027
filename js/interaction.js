@@ -16,6 +16,7 @@ class InteractionController {
     this.tooltipSub = document.getElementById('tooltip-economy-sub');
     this.tooltipFlagImg = document.getElementById('tooltip-flag-thumb');
     this.modalEl = document.getElementById('economy-modal');
+    this.modalBackdrop = document.getElementById('modal-backdrop');
 
     this.initMouseEvents();
     this.initTouchEvents();
@@ -89,7 +90,7 @@ class InteractionController {
   }
 
   checkRaycast(screenX, screenY) {
-    if (!this.scene.flags || !this.scene.flags.flagMeshes.length) return;
+    if (!this.scene.flags || !Array.isArray(this.scene.flags.flagMeshes) || !this.scene.flags.flagMeshes.length) return;
 
     this.raycaster.setFromCamera(this.mouse, this.scene.camera);
     const intersects = this.raycaster.intersectObjects(this.scene.flags.flagMeshes, false);
@@ -124,7 +125,7 @@ class InteractionController {
       : (isVi ? 'NỀN KINH TẾ THÀNH VIÊN APEC' : 'APEC MEMBER ECONOMY');
 
     if (this.tooltipFlagImg) {
-      this.tooltipFlagImg.src = economy.flagUrl;
+      this.tooltipFlagImg.src = `assets/flags/raw/${economy.id}.png`;
     }
 
     this.tooltipEl.classList.add('visible');
@@ -161,13 +162,21 @@ class InteractionController {
 
   initModalEvents() {
     const closeBtn = document.getElementById('close-modal-btn');
-    const backdrop = document.getElementById('modal-backdrop');
+    const backdrop = document.getElementById('modal-backdrop') || this.modalBackdrop;
 
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => this.closeEconomyModal());
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.closeEconomyModal();
+      });
     }
     if (backdrop) {
-      backdrop.addEventListener('click', () => this.closeEconomyModal());
+      backdrop.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.closeEconomyModal();
+      });
     }
 
     window.addEventListener('keydown', (e) => {
@@ -179,25 +188,42 @@ class InteractionController {
 
   openEconomyModal(economy) {
     if (!this.modalEl) return;
+    this.currentModalEconomy = economy;
 
     const isVi = document.documentElement.lang === 'vi';
-    document.getElementById('modal-flag').src = economy.flagUrl;
+    const flagEl = document.getElementById('modal-flag');
+    if (flagEl) {
+      flagEl.src = `assets/flags/raw/${economy.id}.png`;
+      flagEl.alt = isVi ? (economy.nameVi || economy.name) : economy.name;
+    }
     document.getElementById('modal-name').textContent = isVi ? (economy.nameVi || economy.name) : economy.name;
-    document.getElementById('modal-official').textContent = economy.officialName;
-    document.getElementById('modal-region').textContent = economy.region;
+    document.getElementById('modal-official').textContent = isVi ? (economy.officialNameVi || economy.officialName) : economy.officialName;
+    document.getElementById('modal-region').textContent = isVi ? (economy.regionVi || economy.region) : economy.region;
     document.getElementById('modal-year').textContent = economy.joinYear;
     document.getElementById('modal-status').textContent = economy.host 
       ? (isVi ? 'Nền kinh tế Chủ nhà (Host Economy)' : 'Host Economy') 
       : (isVi ? 'Nền kinh tế Thành viên (Member Economy)' : 'Member Economy');
-    document.getElementById('modal-theme').textContent = economy.theme;
+    document.getElementById('modal-theme').textContent = isVi ? (economy.themeVi || economy.theme) : economy.theme;
 
     this.modalEl.classList.add('active');
+    if (this.modalBackdrop) {
+      this.modalBackdrop.classList.add('active');
+    }
     document.body.classList.add('modal-open');
+  }
+
+  updateModalLanguage() {
+    if (this.modalEl && this.modalEl.classList.contains('active') && this.currentModalEconomy) {
+      this.openEconomyModal(this.currentModalEconomy);
+    }
   }
 
   closeEconomyModal() {
     if (!this.modalEl) return;
     this.modalEl.classList.remove('active');
+    if (this.modalBackdrop) {
+      this.modalBackdrop.classList.remove('active');
+    }
     document.body.classList.remove('modal-open');
   }
 }

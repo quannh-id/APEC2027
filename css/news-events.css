@@ -1,0 +1,450 @@
+/* ==========================================================================
+   APEC VIET NAM 2027 — NEWS & EVENTS SECTION
+   Figma Node: 105:21 (News Update)
+   Matching Figma design specifications:
+   - Header: 36px Montserrat ExtraBold, 20px Inter Regular subtitle
+   - Sub categories list: Pill filters with 100px border-radius
+   - Featured news: 160:100 aspect ratio thumb + 330px info block
+   - Secondary news: 3-column grid (206px thumbs, 20px SemiBold titles)
+   - View all button: 150px pill button
+   ========================================================================== */
+
+.news-events-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 80px 24px 100px;
+  background: #ffffff;
+  color: #000000;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+}
+
+.news-events-section::after {
+  display: block;
+  content: "";
+  left: 24px;
+  right: 24px;
+  aspect-ratio: 10/6;
+  background-image: url("/assets/news-events-bottom-bg.png");
+  bottom: 0;
+  position: absolute;
+  border-radius: 0 0 50px 50px;
+  background-size: contain;
+  z-index: -1;
+}
+
+.news-container {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* --------------------------------------------------------------------------
+   1. Section Heading Block (Node 105:24)
+   -------------------------------------------------------------------------- */
+.news-header-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.news-section-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: clamp(30px, 4vw, 36px);
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.news-section-desc {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.5;
+  color: #555555;
+  max-width: 599px;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. Sub Categories List / Filter Pills (Node 105:14)
+   -------------------------------------------------------------------------- */
+.news-categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 20px;
+  width: 100%;
+}
+
+.news-cat-pill {
+  appearance: none;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+  padding: 10px 22px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.3;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-cat-pill.active,
+.news-cat-pill:hover {
+  background: linear-gradient(90deg, #1565e8 0%, #29a8ff 100%);
+  color: #ffffff;
+  border-color: #5bc8ff;
+  box-shadow: 0 4px 14px rgba(0, 54, 138, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   3. News Showcase Area (Node 112:107)
+   -------------------------------------------------------------------------- */
+.news-showcase-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.news-content-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Featured Top News Card (Node 112:109) */
+.news-featured-card {
+  display: flex;
+  align-items: stretch;
+  gap: 25px;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.news-featured-card:hover .news-featured-thumb img {
+  transform: scale(1.035);
+}
+
+.news-featured-card:hover .news-featured-title {
+  color: #00368a;
+}
+
+.news-featured-thumb {
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 160 / 100;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0f4f8;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.news-featured-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.news-featured-info {
+  width: 330px;
+  max-width: 48%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.news-featured-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #111111;
+  margin: 0;
+}
+
+.news-title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.news-title-link:hover {
+  color: #00368a;
+}
+
+/* Meta Row (Figma: Node 136:412) */
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  line-height: 1.3;
+}
+
+.news-meta-category {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #1565e8;
+  letter-spacing: -0.01em;
+}
+
+.news-meta-dot {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: #888888;
+  user-select: none;
+}
+
+.news-meta-time {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #888888;
+}
+
+/* Secondary Cards Meta fine-tuning */
+.news-secondary-content .news-meta {
+  gap: 8px;
+}
+
+.news-secondary-content .news-meta-category {
+  font-size: 13.5px;
+}
+
+.news-secondary-content .news-meta-time {
+  font-size: 13.5px;
+}
+
+.news-featured-desc {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+}
+
+/* Secondary 3-Column Grid (Node 112:119) */
+.news-secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 100%;
+}
+
+.news-secondary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  transition: transform 0.25s ease;
+}
+
+.news-secondary-card:hover .news-secondary-thumb img {
+  transform: scale(1.045);
+}
+
+.news-secondary-card:hover .news-card-title {
+  color: #00368a;
+}
+
+.news-secondary-thumb {
+  width: 100%;
+  height: 206px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f0f4f8;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.news-secondary-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.news-secondary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.news-card-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+  color: #111111;
+  margin: 0;
+  transition: color 0.25s ease;
+}
+
+.news-card-desc {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. View All Button (Node 112:170)
+   -------------------------------------------------------------------------- */
+.news-view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  padding: 11px 20px;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.3;
+  color: #333333;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.news-view-all-btn:hover {
+  background: linear-gradient(90deg, #1565e8 0%, #29a8ff 100%);
+  color: #ffffff;
+  border-color: #5bc8ff;
+  box-shadow: 0 6px 18px rgba(0, 54, 138, 0.25);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   5. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .news-featured-card {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .news-featured-info {
+    width: 100%;
+  }
+
+  .news-secondary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .news-secondary-grid .news-secondary-card:last-child {
+    grid-column: span 2;
+  }
+
+  .news-secondary-grid .news-secondary-card:last-child .news-secondary-thumb {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  .news-events-section {
+    padding: 60px 16px 80px;
+  }
+
+  .news-container {
+    gap: 24px;
+  }
+
+  .news-categories-list {
+    gap: 10px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    scrollbar-width: none;
+  }
+
+  .news-categories-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .news-cat-pill {
+    padding: 8px 16px;
+    font-size: 13.5px;
+  }
+
+  .news-featured-thumb {
+    aspect-ratio: 16 / 9;
+  }
+
+  .news-featured-title {
+    font-size: 20px;
+  }
+
+  .news-featured-desc {
+    font-size: 14.5px;
+  }
+
+  .news-secondary-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .news-secondary-grid .news-secondary-card:last-child {
+    grid-column: auto;
+  }
+
+  .news-secondary-grid .news-secondary-card:last-child .news-secondary-thumb {
+    height: 206px;
+  }
+
+  .news-card-title {
+    font-size: 18px;
+  }
+
+  .news-card-desc {
+    font-size: 14.5px;
+  }
+}

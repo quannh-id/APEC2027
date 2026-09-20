@@ -44,19 +44,19 @@ class ApecSky {
           vec3 dir = normalize(vWorldPosition);
           float y = clamp(dir.y * 1.25 + 0.12, 0.0, 1.0);
           
-          // Rich diplomatic tropical sky: deep azure at top -> vibrant cyan -> soft warm horizon
-          vec3 zenithColor = vec3(0.06, 0.28, 0.62); // Deep rich tropical sky #0f479e
-          vec3 midSkyColor = vec3(0.18, 0.52, 0.85); // Vibrant blue #2e85d9
-          vec3 horizonColor = vec3(0.72, 0.86, 0.97); // Soft light blue #b8dcf7
-          vec3 sunriseGlow = vec3(1.0, 0.90, 0.74); // Warm morning sunlight
+          // Bright, radiant diplomatic tropical sky matching Image 2
+          vec3 zenithColor = vec3(0.08, 0.48, 0.88); // Vibrant tropical daytime sky
+          vec3 midSkyColor = vec3(0.25, 0.66, 0.95); // Bright cerulean sky
+          vec3 horizonColor = vec3(0.80, 0.92, 0.99); // Soft light blue horizon
+          vec3 sunriseGlow = vec3(1.0, 0.98, 0.92); // Radiant sunlight
           
-          vec3 sky = mix(horizonColor, midSkyColor, smoothstep(0.0, 0.42, y));
-          sky = mix(sky, zenithColor, smoothstep(0.42, 1.0, y));
+          vec3 sky = mix(horizonColor, midSkyColor, smoothstep(0.0, 0.45, y));
+          sky = mix(sky, zenithColor, smoothstep(0.45, 1.0, y));
           
           // Sunlight directional glow on upper-right
           float sunDot = max(0.0, dot(dir, uSunPos));
-          float sunGlow = pow(sunDot, 12.0) * 0.4 + pow(sunDot, 3.5) * 0.22;
-          sky = mix(sky, sunriseGlow, clamp(sunGlow, 0.0, 0.75));
+          float sunGlow = pow(sunDot, 10.0) * 0.5 + pow(sunDot, 3.0) * 0.3;
+          sky = mix(sky, sunriseGlow, clamp(sunGlow, 0.0, 0.85));
 
           gl_FragColor = vec4(sky, 1.0);
         }
@@ -69,16 +69,36 @@ class ApecSky {
 
   initClouds() {
     const textureLoader = new THREE.TextureLoader();
-    const cloudTextures = [
-      textureLoader.load('assets/clouds/cloud_1.png'),
-      textureLoader.load('assets/clouds/cloud_2.png'),
-      textureLoader.load('assets/clouds/cloud_3.png')
+    
+    // Texture configuration: High-fidelity linear filtering & anisotropy to eliminate aliasing/pixelation
+    const configureTexture = (tex) => {
+      tex.minFilter = THREE.LinearFilter;
+      tex.magFilter = THREE.LinearFilter;
+      tex.generateMipmaps = false;
+      if (this.scene && this.scene.skyRenderer && this.scene.skyRenderer.capabilities) {
+        tex.anisotropy = Math.min(16, this.scene.skyRenderer.capabilities.getMaxAnisotropy());
+      }
+      tex.needsUpdate = true;
+      return tex;
+    };
+
+    const cloudUrls = [
+      'assets/clouds/cloud_1.png',
+      'assets/clouds/cloud_2.png',
+      'assets/clouds/cloud_3.png'
     ];
 
+    const cloudTextures = cloudUrls.map(url => {
+      const tex = textureLoader.load(url, (loadedTex) => {
+        configureTexture(loadedTex);
+      });
+      return configureTexture(tex);
+    });
+
     const cloudConfigs = [
-      { count: 6, z: -65, scaleRange: [22, 38], yRange: [2, 12], speed: 0.007, opacity: 0.5 },
-      { count: 8, z: -110, scaleRange: [32, 55], yRange: [5, 18], speed: 0.004, opacity: 0.4 },
-      { count: 10, z: -160, scaleRange: [45, 80], yRange: [7, 24], speed: 0.0025, opacity: 0.3 }
+      { count: 8, z: -55, scaleRange: [32, 55], yRange: [-8, 6], speed: 0.007, opacity: 0.85 },
+      { count: 10, z: -95, scaleRange: [45, 75], yRange: [-6, 10], speed: 0.004, opacity: 0.75 },
+      { count: 12, z: -140, scaleRange: [60, 110], yRange: [-4, 15], speed: 0.0025, opacity: 0.65 }
     ];
 
     cloudConfigs.forEach((layer, layerIdx) => {
@@ -89,6 +109,7 @@ class ApecSky {
           transparent: true,
           opacity: layer.opacity * (0.8 + Math.random() * 0.4),
           depthWrite: false,
+          depthTest: false,
           blending: THREE.NormalBlending
         });
 

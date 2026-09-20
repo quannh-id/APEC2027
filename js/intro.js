@@ -104,7 +104,7 @@ class IntroSequencer {
 
     if (this.scene.phuquoc && this.scene.phuquoc.group) {
       const cfg = window.APEC_CONFIG.scene.phuquoc;
-      const targetY = (cfg && cfg.groupY !== undefined) ? cfg.groupY : -3.2;
+      const targetY = (cfg && cfg.groupY !== undefined) ? cfg.groupY : -1.2;
       this.scene.phuquoc.group.scale.set(0.36, 0.36, 0.36);
       this.scene.phuquoc.group.position.set(0, targetY, 0);
     }

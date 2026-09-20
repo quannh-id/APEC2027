@@ -21,7 +21,7 @@ class PerspectiveRingCarousel {
     this.cullAngle = 56;       // Visible field of view
     this.speed = 3.8;          // Doubled speed (3.8 deg/s)
     this.phase = -2;           // Continuous rotation phase
-    this.archDrop = 950;       // Upward convex curvature arch height
+    this.archDrop = -450;      // Downward concave arch curvature (smile curve dipping across sphere center)
     
     this.lastTime = performance.now();
     this.isPaused = false;
@@ -75,14 +75,9 @@ class PerspectiveRingCarousel {
       card.dataset.index = i;
       card.dataset.code = eco.id;
 
-      const countryName = isVi ? (eco.nameVi || eco.name) : eco.name;
-
       card.innerHTML = `
         <div class="flag-card-stage">
           <img src="assets/flags/raw/${eco.id}.png" alt="${eco.name}" class="flag-raw-img" loading="eager" />
-          <div class="flag-name-tag">
-            <span class="flag-name-label" data-vi="${eco.nameVi || eco.name}" data-en="${eco.name}">${countryName}</span>
-          </div>
         </div>
         <div class="card-edge-highlight"></div>
       `;
@@ -157,7 +152,7 @@ class PerspectiveRingCarousel {
   }
 
   onResize() {
-    const vw = window.innerWidth;
+    const vw = document.documentElement.clientWidth || window.innerWidth;
     const vh = window.innerHeight;
 
     // Keep fixed radius R, perspective, and arch curvature across all screens
@@ -165,7 +160,7 @@ class PerspectiveRingCarousel {
     // This ensures inter-card spacing is strictly constant and never squeezes together when window shrinks
     this.R = 2100;
     this.perspective = 2500;
-    this.archDrop = 950;
+    this.archDrop = -450;
 
     // Dynamically adjust cull angle to viewport width to hide off-screen cards cleanly
     const maxVisibleX = vw * 0.5 + 240;
@@ -178,7 +173,7 @@ class PerspectiveRingCarousel {
     }
 
     if (vw < 768) {
-      const targetY = Math.round(vh * 0.44 - 540);
+      const targetY = Math.round(vh * 0.54 - 540);
       this.showcase.style.transform = `translateY(${targetY}px)`;
       this.showcase.style.transformOrigin = '50% 540px';
     } else {

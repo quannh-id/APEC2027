@@ -31,13 +31,49 @@ class ApecApp {
     this.intro = new IntroSequencer(this.scene);
     this.intro.play();
 
-    // 5. Bind UI Controls
+    // 5. Bind UI Controls & Smooth Scroll GSAP Transitions
     this.bindUIControls();
-    this.bindScrollHandling();
+    this.initSmoothScrollAndGSAP();
+    this.initHeaderScroll();
 
     // 6. Start Render Loop
     this.animate = this.animate.bind(this);
     requestAnimationFrame(this.animate);
+
+    // 7. Multi-Stage Layout & Canvas Synchronization (Eliminates Initial Right Gap & Aspect Shift)
+    this.initLayoutSync();
+  }
+
+  initLayoutSync() {
+    const sync = () => {
+      if (this.scene && this.scene.onResize) {
+        this.scene.onResize();
+      }
+      if (this.ringCarousel && this.ringCarousel.onResize) {
+        this.ringCarousel.onResize();
+      }
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    };
+
+    // Stage 1: Immediate synchronization on constructor completion
+    sync();
+
+    // Stage 2: Next frame when DOM render tree is active
+    requestAnimationFrame(sync);
+
+    // Stage 3: Window load event when all external stylesheets and Google Fonts have arrived
+    if (document.readyState === 'complete') {
+      sync();
+    } else {
+      window.addEventListener('load', sync, { once: true });
+    }
+
+    // Stage 4: Staggered timers to catch any delayed CSS reflows or scrollbar appearances
+    setTimeout(sync, 50);
+    setTimeout(sync, 250);
+    setTimeout(sync, 600);
   }
 
   bindUIControls() {
@@ -50,18 +86,6 @@ class ApecApp {
       });
     });
 
-    // Smooth Scroll explore CTA
-    const ctaBtn = document.getElementById('explore-cta-btn');
-    if (ctaBtn) {
-      ctaBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const nextSec = document.getElementById('summit-pillars');
-        if (nextSec) {
-          nextSec.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    }
-
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
     const mobileNav = document.getElementById('mobile-nav-drawer');
@@ -71,33 +95,151 @@ class ApecApp {
         mobileMenuBtn.classList.toggle('active');
       });
     }
+
+    // Destination Category Pills Click State
+    const destPills = document.querySelectorAll('.destination-pill');
+    destPills.forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        e.preventDefault();
+        destPills.forEach(p => p.classList.remove('is-active'));
+        pill.classList.add('is-active');
+      });
+    });
+
+    // Multimedia Category Filter Tabs
+    const mediaPills = document.querySelectorAll('.media-pill');
+    const mediaCards = document.querySelectorAll('.media-card');
+    mediaPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const cat = pill.dataset.category;
+        mediaPills.forEach(p => p.classList.remove('is-active'));
+        pill.classList.add('is-active');
+
+        mediaCards.forEach(card => {
+          if (cat === 'all' || card.dataset.mediaType === cat) {
+            card.classList.remove('is-hidden');
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+      });
+    });
   }
 
-  bindScrollHandling() {
-    let ticking = false;
+  initHeaderScroll() {
+    const header = document.querySelector('.main-header');
+    if (!header) return;
 
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          const heroHeight = window.innerHeight;
-          const progress = Math.min(1.0, scrollY / (heroHeight * 0.8));
+    const onScroll = () => {
+      const scrollY = (this.lenis && typeof this.lenis.scroll === 'number')
+        ? this.lenis.scroll
+        : (window.scrollY || document.documentElement.scrollTop || 0);
 
-          // Send scroll progression to 3D scene
-          this.scene.setScrollProgress(progress);
-
-          // Hero content subtle parallax fade
-          const heroContent = document.querySelector('.hero-content');
-          if (heroContent) {
-            heroContent.style.transform = `translate3d(0, ${-scrollY * 0.35}px, 0)`;
-            heroContent.style.opacity = Math.max(0, 1 - progress * 1.5);
-          }
-
-          ticking = false;
-        });
-        ticking = true;
+      if (scrollY > 30) {
+        header.classList.remove('is-transparent');
+      } else {
+        header.classList.add('is-transparent');
       }
-    }, { passive: true });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    if (this.lenis) {
+      this.lenis.on('scroll', onScroll);
+    }
+    onScroll();
+  }
+
+  initSmoothScrollAndGSAP() {
+    // 1. Initialize Lenis Smooth Scroll
+    if (typeof Lenis !== 'undefined') {
+      this.lenis = new Lenis({
+        duration: 1.25,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        wheelMultiplier: 1.0,
+        touchMultiplier: 1.5,
+      });
+
+      // Synchronize Lenis with GSAP ScrollTrigger
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+        this.lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+          this.lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+      } else {
+        const raf = (time) => {
+          this.lenis.raf(time);
+          requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
+      }
+
+      // Forward Lenis scroll updates to 3D scene
+      this.lenis.on('scroll', (e) => {
+        if (this.scene && this.scene.setScroll) {
+          this.scene.setScroll(e.scroll);
+        }
+      });
+    } else {
+      // Fallback scroll handling if Lenis not loaded
+      window.addEventListener('scroll', () => {
+        if (this.scene && this.scene.setScroll) {
+          this.scene.setScroll(window.scrollY);
+        }
+      }, { passive: true });
+    }
+
+    // 2. Universal Smooth Scroll for all in-page anchor links (CTA, scroll indicator, nav)
+    const smoothLinks = document.querySelectorAll('a[href^="#"]');
+    smoothLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          if (this.lenis) {
+            this.lenis.scrollTo(targetEl, { offset: -20, duration: 1.4 });
+          } else {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // 3. GSAP ScrollTrigger: Transition Background only
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      const heroEl = document.getElementById('hero-section');
+
+      // Seamless Background Transition: Hero sky -> Next section white
+      gsap.to('.page-bg-next', {
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: heroEl,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        }
+      });
+    }
+
+    // Support automated test URL query parameter (e.g. ?scroll=600)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('scroll')) {
+      const scrollY = parseInt(urlParams.get('scroll'), 10);
+      setTimeout(() => {
+        if (this.lenis) {
+          this.lenis.scrollTo(scrollY, { immediate: true });
+        } else {
+          window.scrollTo(0, scrollY);
+        }
+        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.update();
+        if (this.scene && this.scene.setScroll) this.scene.setScroll(scrollY);
+      }, 300);
+    }
   }
 
   setLanguage(lang) {
@@ -114,13 +256,28 @@ class ApecApp {
     elements.forEach(el => {
       const text = lang === 'vi' ? el.getAttribute('data-i18n-vi') : el.getAttribute('data-i18n-en');
       if (text) {
-        el.textContent = text;
+        if (text.includes('<br>') || text.includes('<span')) {
+          el.innerHTML = text;
+        } else {
+          el.textContent = text;
+        }
       }
     });
 
     // Update flag name labels on perspective ring carousel
     if (this.ringCarousel && this.ringCarousel.updateLanguage) {
       this.ringCarousel.updateLanguage(lang);
+    }
+
+    // Update member economy pills in roster
+    document.querySelectorAll('.economy-pill-name').forEach(el => {
+      const text = lang === 'vi' ? el.getAttribute('data-vi') : el.getAttribute('data-en');
+      if (text) el.textContent = text;
+    });
+
+    // Update open modal content if currently active
+    if (this.interaction && this.interaction.updateModalLanguage) {
+      this.interaction.updateModalLanguage();
     }
 
     // Update buttons / placeholders
