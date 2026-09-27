@@ -22,46 +22,204 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
 }
 
 /* --------------------------------------------------------------------------
-   2. Section Header
+   2. Section Header & Host Years Timeline
    -------------------------------------------------------------------------- */
 .vn-section-header {
   text-align: center;
   max-width: 860px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Timeline Host Years Header Component (2006, 2017, 2027) */
+.vn-timeline-header-wrap {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto 28px;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0 12px;
+}
+
+.vn-timeline-track-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+
+.vn-timeline-track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Base horizontal track line connecting dots */
+.vn-timeline-base-line {
+  position: absolute;
+  bottom: 7px;
+  height: 2px;
+  background: #cbd5e1;
+  z-index: 1;
+}
+
+/* Active progress line */
+.vn-timeline-active-line {
+  position: absolute;
+  bottom: 7px;
+  height: 2px;
+  background: #1d70f5;
+  z-index: 2;
+  width: 0;
+  transition: width 0.45s cubic-bezier(0.25, 1, 0.5, 1), left 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vn-timeline-nodes {
+  display: flex;
+  align-items: flex-end;
+  gap: 90px;
+  position: relative;
+  z-index: 3;
+}
+
+.vn-timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 6px;
+  min-width: 84px;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  user-select: none;
+}
+
+.vn-node-year {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #94a3b8;
+  line-height: 1;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  letter-spacing: -0.02em;
+}
+
+.vn-timeline-node:hover .vn-node-year {
+  color: #64748b;
+}
+
+.vn-node-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  box-sizing: border-box;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vn-timeline-node:hover .vn-node-dot {
+  border-color: #94a3b8;
+  transform: scale(1.1);
+}
+
+/* Active Node State (ref photo: bold bright blue & centered) */
+.vn-timeline-node.active .vn-node-year {
+  font-size: 34px;
+  font-weight: 900;
+  color: #1d70f5;
+  transform: scale(1.08);
+}
+
+.vn-timeline-node.active .vn-node-dot {
+  width: 16px;
+  height: 16px;
+  background: #1d70f5;
+  border: none;
+  box-shadow: 0 0 0 5px rgba(29, 112, 245, 0.22);
+  transform: scale(1.1);
 }
 
 .vn-section-title {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(30px, 3.8vw, 44px);
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.015em;
   text-transform: uppercase;
   margin-bottom: 16px;
-}
-
-.vn-title-red {
-  color: #e31837;
-  display: inline-block;
-}
-
-.vn-title-va {
-  color: #00368a;
-  display: inline-block;
+  color: #000000;
 }
 
 .vn-section-desc {
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.6;
   color: #555555;
   margin: 0 auto;
   max-width: 780px;
   font-weight: 400;
+  transition: opacity 0.25s ease;
+}
+
+/* Multi-Year Content Panes */
+.vn-year-content {
+  width: 100%;
+  display: none;
+}
+
+.vn-year-content.active {
+  display: block;
+  animation: vnYearFade 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes vnYearFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .vn-timeline-nodes {
+    gap: 56px;
+  }
+
+  .vn-timeline-node {
+    min-width: 64px;
+    padding: 0 4px;
+  }
+
+  .vn-node-year {
+    font-size: 22px;
+  }
+
+  .vn-timeline-node.active .vn-node-year {
+    font-size: 26px;
+  }
 }
 
 /* --------------------------------------------------------------------------
