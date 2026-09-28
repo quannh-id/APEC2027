@@ -167,6 +167,7 @@
   text-transform: uppercase;
   margin-bottom: 16px;
   color: #000000;
+  will-change: opacity, transform;
 }
 
 .vn-section-desc {
@@ -177,31 +178,46 @@
   margin: 0 auto;
   max-width: 780px;
   font-weight: 400;
-  transition: opacity 0.25s ease;
+  will-change: opacity, transform;
+}
+
+/* Multi-Year Header Panels (Title & Description) */
+.vn-year-header-panel {
+  display: none;
+  width: 100%;
+  will-change: opacity, transform;
+}
+
+.vn-year-header-panel.active {
+  display: block;
+  animation: vnFadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Multi-Year Content Panes */
 .vn-year-content {
   width: 100%;
   display: none;
+  will-change: opacity, transform;
 }
 
 .vn-year-content.active {
   display: block;
-  animation: vnYearFade 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: vnFadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both;
 }
 
-@keyframes vnYearFade {
-  from {
+@keyframes vnFadeInUp {
+  0% {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(18px);
   }
 
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+
 
 @media (max-width: 640px) {
   .vn-timeline-nodes {

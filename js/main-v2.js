@@ -165,7 +165,6 @@ class ApecAppV2 {
       autoplay: {
         delay: 5000,
         disableOnInteraction: true,
-        pauseOnMouseEnter: true,
       },
       keyboard: {
         enabled: true,

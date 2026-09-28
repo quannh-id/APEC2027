@@ -1,0 +1,552 @@
+/* ==========================================================================
+   APEC VIET NAM 2027 — ARTICLE DETAIL PAGE STYLESHEET
+   Harmonized with APEC 2027 Design System, Montserrat & Inter Fonts
+   ========================================================================== */
+
+/* Reading progress bar */
+.reading-progress-bar {
+  position: fixed;
+  top: var(--header-height, 84px);
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  background: linear-gradient(90deg, #1565e8 0%, #38bdf8 100%);
+  z-index: 99;
+  transition: width 0.1s linear;
+}
+
+/* Detail page main container */
+.article-detail-page {
+  background-color: #f8fafc;
+  color: #0f172a;
+  min-height: 100vh;
+  font-family: var(--font-body, "Inter", sans-serif);
+  padding-top: var(--header-height, 84px);
+}
+
+.detail-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   1. Article Header Section
+   -------------------------------------------------------------------------- */
+.article-header-section {
+  padding: 36px 0 28px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.article-header-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.article-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.article-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.article-breadcrumb a:hover {
+  color: #1565e8;
+}
+
+.article-breadcrumb .breadcrumb-separator {
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.article-breadcrumb .breadcrumb-current {
+  color: #08214d;
+  font-weight: 700;
+}
+
+.article-kicker-tag {
+  display: inline-block;
+  color: #1565e8;
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.article-main-title {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #08214d;
+  letter-spacing: -0.025em;
+  margin: 0 0 18px;
+}
+
+.article-sapo-lead {
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 500;
+  color: #334155;
+  margin: 0 0 24px;
+}
+
+.article-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+}
+
+.article-author-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.article-author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0f2fe;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.author-name {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #08214d;
+}
+
+.article-publish-time {
+  font-size: 12.5px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Share actions bar */
+.article-share-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.share-action-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.share-action-btn:hover {
+  background: #1565e8;
+  color: #ffffff;
+  border-color: #1565e8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(21, 101, 232, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   2. Article Main Content & Sidebar Layout
+   -------------------------------------------------------------------------- */
+.article-content-section {
+  padding: 44px 0 80px;
+}
+
+.article-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 52px;
+  align-items: start;
+}
+
+/* Article Left Body */
+.article-body-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 44px;
+  box-shadow: 0 4px 16px rgba(8, 33, 77, 0.03);
+  min-width: 0;
+}
+
+/* Featured Hero Figure */
+.article-hero-figure {
+  margin: 0 0 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #08214d;
+}
+
+.article-hero-figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9.5;
+  object-fit: cover;
+  display: block;
+}
+
+.article-figure-caption {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #64748b;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  font-style: italic;
+}
+
+/* Rich text article elements */
+.article-rich-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #1e293b;
+  margin: 0 0 24px;
+}
+
+.article-rich-text h2 {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 24px;
+  font-weight: 800;
+  color: #08214d;
+  line-height: 1.35;
+  margin: 40px 0 16px;
+  padding-left: 14px;
+  border-left: 4px solid #1565e8;
+}
+
+.article-rich-text h3 {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: #08214d;
+  line-height: 1.4;
+  margin: 30px 0 12px;
+}
+
+/* Blockquote */
+.article-highlight-quote {
+  margin: 36px 0;
+  padding: 24px 28px;
+  background: #f8fafc;
+  border-left: 4px solid #1565e8;
+  border-radius: 0 12px 12px 0;
+}
+
+.article-highlight-quote p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 600;
+  font-style: italic;
+  color: #08214d;
+  margin: 0 0 8px;
+}
+
+.article-highlight-quote cite {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: #1565e8;
+  font-style: normal;
+}
+
+/* Key Takeaways Callout */
+.article-takeaways-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 36px 0;
+}
+
+.takeaways-title {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 16px;
+  font-weight: 800;
+  color: #08214d;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.takeaways-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.takeaways-list li {
+  margin-bottom: 8px;
+}
+
+/* Inline figure */
+.article-inline-figure {
+  margin: 36px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.article-inline-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Article Tags */
+.article-tags-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 24px 0;
+  margin-top: 32px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.tags-label {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  margin-right: 4px;
+}
+
+.article-tag-pill {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #08214d;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.article-tag-pill:hover {
+  background: #1565e8;
+  color: #ffffff;
+}
+
+/* Article Footer Navigation */
+.article-footer-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding-top: 28px;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 16px;
+}
+
+.nav-article-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.nav-article-card:hover {
+  border-color: #1565e8;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(21, 101, 232, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1565e8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-title {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #08214d;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. Related Stories Section Below Article
+   -------------------------------------------------------------------------- */
+.related-stories-section {
+  padding: 56px 0 80px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.related-stories-heading {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 22px;
+  font-weight: 800;
+  color: #08214d;
+  margin: 0 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.related-stories-heading::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background: #1565e8;
+  border-radius: 2px;
+}
+
+.related-stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.related-story-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.related-story-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(8, 33, 77, 0.08);
+  border-color: #cbd5e1;
+}
+
+.related-story-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.related-story-content {
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.related-story-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  color: #1565e8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.related-story-title a {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #08214d;
+  margin: 0;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.related-story-title a:hover {
+  color: #1565e8;
+}
+
+/* --------------------------------------------------------------------------
+   4. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .article-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .article-body-wrapper {
+    padding: 32px;
+  }
+
+  .related-stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .article-detail-page {
+    padding-top: 72px;
+  }
+
+  .detail-container {
+    padding: 0 16px;
+  }
+
+  .article-body-wrapper {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .article-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .article-footer-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .related-stories-grid {
+    grid-template-columns: 1fr;
+  }
+}

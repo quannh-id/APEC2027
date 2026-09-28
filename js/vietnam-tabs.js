@@ -58,12 +58,16 @@
   }
 
   function selectYear(year) {
-    currentActiveYear = String(year);
+    const targetYear = String(year);
+    if (targetYear === currentActiveYear) return;
+    currentActiveYear = targetYear;
+
     const nodes = document.querySelectorAll('.vn-timeline-node');
+    const headerPanels = document.querySelectorAll('.vn-year-header-panel');
     const yearContents = document.querySelectorAll('.vn-year-content');
-    const descEl = document.getElementById('vn-section-desc');
     let activeNode = null;
 
+    // 1. Phản hồi timeline dot và active line ngay lập tức
     nodes.forEach((node) => {
       const isMatch = node.getAttribute('data-year') === currentActiveYear;
       node.classList.toggle('active', isMatch);
@@ -75,20 +79,17 @@
       centerTimelineNode(activeNode);
     }
 
-    // Update description with bilingual support
-    if (descEl && yearDescriptions[currentActiveYear]) {
-      const isVi = document.documentElement.lang !== 'en';
-      descEl.setAttribute('data-i18n-vi', yearDescriptions[currentActiveYear].vi);
-      descEl.setAttribute('data-i18n-en', yearDescriptions[currentActiveYear].en);
-      descEl.textContent = isVi ? yearDescriptions[currentActiveYear].vi : yearDescriptions[currentActiveYear].en;
-    }
+    // 2. Chuyển đổi header panel (Title & Description) - kích hoạt CSS animation tự nhiên
+    headerPanels.forEach((panel) => {
+      const isMatch = panel.getAttribute('data-year') === currentActiveYear;
+      panel.classList.toggle('active', isMatch);
+    });
 
-    // Toggle year content container
+    // 3. Chuyển đổi nội dung năm (active panel)
     yearContents.forEach((yc) => {
       const isMatch = yc.getAttribute('data-year') === currentActiveYear;
       yc.classList.toggle('active', isMatch);
       if (isMatch) {
-        // Reset tab to 1 if needed
         const firstTab = yc.querySelector('.vn-tab-item[data-tab="1"]');
         if (firstTab && !yc.querySelector('.vn-tab-item.active')) {
           firstTab.click();
@@ -120,11 +121,16 @@
         const isMatch = pane.getAttribute('data-pane') === String(targetIndex);
         if (isMatch) {
           pane.classList.add('active');
-          if (typeof gsap !== 'undefined') {
-            gsap.fromTo(
-              pane,
-              { opacity: 0, y: 10 },
-              { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out', clearProps: 'transform' }
+          if (typeof pane.animate === 'function') {
+            pane.animate(
+              [
+                { opacity: 0, transform: 'translateY(10px)' },
+                { opacity: 1, transform: 'translateY(0)' }
+              ],
+              {
+                duration: 320,
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+              }
             );
           }
         } else {
