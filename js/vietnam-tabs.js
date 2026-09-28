@@ -79,21 +79,53 @@
       centerTimelineNode(activeNode);
     }
 
-    // 2. Chuyển đổi header panel (Title & Description) - kích hoạt CSS animation tự nhiên
+    // 2. Chuyển đổi header panel (Title & Description) - kích hoạt hiệu ứng fade-in mượt mà
     headerPanels.forEach((panel) => {
       const isMatch = panel.getAttribute('data-year') === currentActiveYear;
-      panel.classList.toggle('active', isMatch);
+      if (isMatch) {
+        panel.classList.add('active');
+        if (typeof panel.animate === 'function') {
+          panel.animate(
+            [
+              { opacity: 0, transform: 'translateY(16px)' },
+              { opacity: 1, transform: 'translateY(0)' }
+            ],
+            {
+              duration: 420,
+              easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+              fill: 'both'
+            }
+          );
+        }
+      } else {
+        panel.classList.remove('active');
+      }
     });
 
-    // 3. Chuyển đổi nội dung năm (active panel)
+    // 3. Chuyển đổi nội dung năm (active panel) - kích hoạt hiệu ứng fade-in mượt mà
     yearContents.forEach((yc) => {
       const isMatch = yc.getAttribute('data-year') === currentActiveYear;
-      yc.classList.toggle('active', isMatch);
       if (isMatch) {
+        yc.classList.add('active');
+        if (typeof yc.animate === 'function') {
+          yc.animate(
+            [
+              { opacity: 0, transform: 'translateY(18px)' },
+              { opacity: 1, transform: 'translateY(0)' }
+            ],
+            {
+              duration: 450,
+              easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+              fill: 'both'
+            }
+          );
+        }
         const firstTab = yc.querySelector('.vn-tab-item[data-tab="1"]');
         if (firstTab && !yc.querySelector('.vn-tab-item.active')) {
           firstTab.click();
         }
+      } else {
+        yc.classList.remove('active');
       }
     });
   }
